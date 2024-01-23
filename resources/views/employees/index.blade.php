@@ -34,14 +34,14 @@
                                     <td>{{ $employee->email }}</td>
                                     <td>{{ $employee->phone }}</td>
                                     <td>
-                                        <a href="{{ route('employees.show', $employee->id) }}">View</a>
-                                        <a href="{{ route('employees.edit', $employee->id) }}">Edit</a>
-                                        <a href="{{ route('employees.export-single', $employee->id) }}">Export</a>
+                                        <a href="{{ route('employees.show', $employee->id) }}" class="btn btn-secondary btn-sm">Show</a>
+                                        <a href="{{ route('employees.edit', $employee->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="{{ route('employees.export-single', $employee->id) }}" class="btn btn-info btn-sm">Download</a>
                                         <form action="{{ route('employees.destroy', $employee->id) }}"
                                             method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit">Supprimer</button>
+                                            <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
                                         </form>
                                     </td>
                                 </tr>

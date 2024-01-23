@@ -154,7 +154,8 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('admin/employees', EmployeeController::class);
     Route::get('admin/employees/export/{id}', [EmployeeController::class, 'exportSinglePDF'])->name('employees.export-single');
     
-    Route::resource('employee-files', EmployeeFileController::class);
+    Route::resource('admin/employee-files', EmployeeFileController::class);
+    Route::get('employee-files/{id}/download', [EmployeeFileController::class, 'download'])->name('employee-files.download');
 
     Route::resource('leave-requests', LeaveRequestController::class);
 

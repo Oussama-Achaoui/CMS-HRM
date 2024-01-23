@@ -6,12 +6,12 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Cartes de visite</h1>
+        <h1 class="h3 mb-2 text-gray-800">Dossiers des Employés</h1>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Toutes les cartes de visite</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Tous les Dossiers des Employés</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -19,25 +19,26 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Nom </th>
-                                <th>Rôle</th>
+                                <th>Employee</th>
+                                <th>File Type</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($businessCards as $businessCard)
+                            @foreach ($employeeFiles as $file)
                                 <tr>
-                                    <td>{{ ucfirst($businessCard->name) }}</td>
-                                    <td>{{ $businessCard->role }}</td>
+                                    <td>{{ $file->employee->first_name }} {{ $file->employee->last_name }}</td>
+                                    <td>{{ $file->file_type }}</td>
                                     <td>
-                                        <a href="{{ route('business-cards.show', $businessCard->id) }}">View</a>
-                                        <a href="{{ route('business-cards.edit', $businessCard->id) }}">Edit</a>
-                                        <a href="{{ route('business-cards.export-single', $businessCard->id) }}">Export</a>
-                                        <form action="{{ route('business-cards.destroy', $businessCard->id) }}"
-                                            method="post">
+                                        <a href="{{ route('employee-files.show', $file->id) }}" class="btn btn-secondary btn-sm">Show</a>
+                                        <a href="{{ route('employee-files.edit', $file->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                    @if ($file-> file_path)
+                                        <a href="{{ route('employee-files.download', $file->id) }}" class="btn btn-info btn-sm" target="_blank">Download File</a>
+                                    @endif
+                                        <form action="{{ route('employee-files.destroy', $file->id) }}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit">Supprimer</button>
+                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                         </form>
                                     </td>
                                 </tr>

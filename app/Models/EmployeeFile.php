@@ -11,8 +11,8 @@ class EmployeeFile extends Model
 
     protected $fillable = [
         'employee_id',
+        'file_type',
         'file_path',
-        'description',
         // Add other attributes as needed
     ];
 
