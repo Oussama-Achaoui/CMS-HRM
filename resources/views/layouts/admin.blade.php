@@ -184,58 +184,27 @@
                         </div>
                     </li>
                 @endif
-
-                @if (Auth::user()->role->name == 'administrator')
-                    <!-- Nav Item - Pages Collapse Menu -->
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="/admin" data-toggle="collapse" data-target="#collapseEmp"
-                            aria-expanded="true" aria-controls="collapseEmp">
-                            <i class="fas fa-fw fa-user"></i>
-                            <span>Employées</span>
-                        </a>
-                        <div id="collapseEmp" class="collapse" data-parent="#accordionSidebar">
-                            <div class="bg-white py-2 collapse-inner rounded">
-                                <a class="collapse-item" href="{{ route('employees.index') }}">Tous les Employés</a>
-                                <a class="collapse-item" href="{{ route('employees.create') }}">Créer un Employé</a>
-                            </div>
-                        </div>
-                    </li>
-                @endif
-
-                @if (Auth::user()->role->name == 'administrator')
-                    <!-- Nav Item - Pages Collapse Menu -->
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="/admin" data-toggle="collapse" data-target="#collapseFiles"
-                            aria-expanded="true" aria-controls="collapseFiles">
-                            <i class="fas fa-fw fa-user"></i>
-                            <span>Dossiers des Employés</span>
-                        </a>
-                        <div id="collapseFiles" class="collapse" data-parent="#accordionSidebar">
-                            <div class="bg-white py-2 collapse-inner rounded">
-                                <a class="collapse-item" href="{{ route('employee-files.index') }}">Tous les Dossiers</a>
-                                <a class="collapse-item" href="{{ route('employee-files.create') }}">Ajouter un
-                                    Dossier</a>
-                            </div>
-                        </div>
-                    </li>
-                @endif
-
-                @if (Auth::user()->role->name == 'administrator')
-                    <!-- Nav Item - Pages Collapse Menu -->
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="/admin" data-toggle="collapse" data-target="#collapseleave"
-                            aria-expanded="true" aria-controls="collapseleave">
-                            <i class="fas fa-fw fa-user"></i>
-                            <span>Congés</span>
-                        </a>
-                        <div id="collapseleave" class="collapse" data-parent="#accordionSidebar">
-                            <div class="bg-white py-2 collapse-inner rounded">
-                                <a class="collapse-item" href="{{ route('leave-requests.index') }}">Tous les Congés</a>
-                                <a class="collapse-item" href="{{ route('leave-requests.create') }}">Ajouter un Congé</a>
-                            </div>
-                        </div>
-                    </li>
-                @endif
+{{-- HRM --}}
+@if (Auth::user()->role->name == 'administrator')
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHRM"
+            aria-expanded="true" aria-controls="collapseHRM">
+            <i class="fas fa-fw fa-user"></i>
+            <span>HRM</span>
+        </a>
+        <div id="collapseHRM" class="collapse" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('employees.index') }}">Tous les Employés</a>
+                <a class="collapse-item" href="{{ route('employees.create') }}">Créer un Employé</a>
+                <a class="collapse-item" href="{{ route('employee-files.index') }}">Dossiers des Employés</a>
+                <a class="collapse-item" href="{{ route('employee-files.create') }}">Ajouter un Dossier</a>
+                <a class="collapse-item" href="{{ route('leave-requests.index') }}">Congés</a>
+                <a class="collapse-item" href="{{ route('leave-requests.create') }}">Ajouter un Congé</a>
+            </div>
+        </div>
+    </li>
+@endif
 
                 @if (Auth::user()->role->name == 'administrator')
                     <!-- Nav Item - Pages Collapse Menu -->
