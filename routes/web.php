@@ -27,7 +27,6 @@ use App\Http\Controllers\BlogSettingController;
 use App\Http\Controllers\ContactSettingController;
 use App\Http\Controllers\HeaderFooterSettingController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\BusinessCardController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmployeeFileController;
 use App\Http\Controllers\LeaveRequestController;
@@ -152,9 +151,6 @@ Route::middleware(['admin'])->group(function () {
     Route::get('admin/settings', [SettingController::class, 'edit'])->name('setting.edit');
     Route::put('admin/settings/{langid}/update', [SettingController::class, 'update'])->name('setting.update');
 
-    Route::resource('admin/business-cards', BusinessCardController::class);
-    Route::get('admin/business-cards/export/{id}', [BusinessCardController::class, 'exportSinglePDF'])->name('business-cards.export-single');
-    
     Route::resource('admin/employees', EmployeeController::class);
     Route::get('admin/employees/export/{id}', [EmployeeController::class, 'exportSinglePDF'])->name('employees.export-single');
     
