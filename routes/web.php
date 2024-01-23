@@ -32,7 +32,10 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmployeeFileController;
 use App\Http\Controllers\LeaveRequestController;
 use App\Http\Controllers\PerformanceReviewController;
-use App\Models\Language;
+
+
+/*
+|----------------------------use App\Models\Language;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -49,9 +52,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 // Route::get('/langtest', function () { echo Language::all();; })->name('home');
-
-Route::group(['middleware' => 'setlang'], function () {
-    Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
     
 
     Auth::routes();
@@ -69,7 +70,6 @@ Route::group(['middleware' => 'setlang'], function () {
 
     Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
 
-});
 
 
 Route::middleware(['author'])->group(function () {
@@ -152,15 +152,17 @@ Route::middleware(['admin'])->group(function () {
     Route::get('admin/settings', [SettingController::class, 'edit'])->name('setting.edit');
     Route::put('admin/settings/{langid}/update', [SettingController::class, 'update'])->name('setting.update');
 
-    Route::get('/business-cards', [BusinessCardController::class, 'index'])->name('business-cards.index');
-    Route::get('business-cards/create', [BusinessCardController::class, 'create'])->name('business-cards.create');
-    Route::post('business-cards', [BusinessCardController::class, 'store'])->name('business-cards.store');
-    Route::get('business-cards/export/{id}', [BusinessCardController::class, 'exportSinglePDF'])->name('business-cards.export-single');
-    Route::get('business-cards/{businessCard}', [BusinessCardController::class, 'show'])->name('business-cards.show');
-    Route::get('business-cards/{id}/edit', [BusinessCardController::class, 'edit'])->name('business-cards.edit');
-    Route::put('business-cards/{businessCard}', [BusinessCardController::class, 'update'])->name('business-cards.update');
-    Route::delete('business-cards/{businessCard}', [BusinessCardController::class, 'destroy'])->name('business-cards.destroy');
+    Route::resource('admin/business-cards', BusinessCardController::class);
+    Route::get('admin/business-cards/export/{id}', [BusinessCardController::class, 'exportSinglePDF'])->name('business-cards.export-single');
+    
+    Route::resource('admin/employees', EmployeeController::class);
+    Route::get('admin/employees/export/{id}', [EmployeeController::class, 'exportSinglePDF'])->name('employees.export-single');
+    
+    Route::resource('employee-files', EmployeeFileController::class);
 
+    Route::resource('leave-requests', LeaveRequestController::class);
+
+    Route::resource('performance-reviews', PerformanceReviewController::class);
     
 
 });

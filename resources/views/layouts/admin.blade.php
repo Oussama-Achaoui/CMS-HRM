@@ -180,14 +180,12 @@
                     <a class="nav-link collapsed" href="/admin" data-toggle="collapse" data-target="#collapseBCard"
                         aria-expanded="true" aria-controls="collapseBCard">
                         <i class="fas fa-fw fa-user"></i>
-                        <span>Cartes de visite</span>
+                        <span>Employées</span>
                     </a>
                     <div id="collapseBCard" class="collapse" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="{{ route('business-cards.index') }}">All Cartes de
-                                visite</a>
-                            <a class="collapse-item" href="{{ route('business-cards.create') }}">Create Business
-                                Card</a>
+                            <a class="collapse-item" href="{{ route('employees.index') }}">Tous les Employés</a>
+                            <a class="collapse-item" href="{{ route('employees.create') }}">Créer un Employé</a>
                         </div>
                     </div>
                 </li>
