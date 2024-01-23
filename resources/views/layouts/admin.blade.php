@@ -34,6 +34,10 @@
             overflow-y: auto; 
             z-index: 1000; 
         }
+
+        .link-hrm {
+            color: black !important;
+        }
     </style>
 
 </head>
@@ -195,16 +199,53 @@
         </a>
         <div id="collapseHRM" class="collapse" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('employees.index') }}">Tous les Employés</a>
-                <a class="collapse-item" href="{{ route('employees.create') }}">Créer un Employé</a>
-                <a class="collapse-item" href="{{ route('employee-files.index') }}">Dossiers des Employés</a>
-                <a class="collapse-item" href="{{ route('employee-files.create') }}">Ajouter un Dossier</a>
-                <a class="collapse-item" href="{{ route('leave-requests.index') }}">Congés</a>
-                <a class="collapse-item" href="{{ route('leave-requests.create') }}">Ajouter un Congé</a>
+                <!-- Employee Menu -->
+                <div class="nav-item">
+                    <a class="nav-link collapsed dark" href="#" data-toggle="collapse" data-target="#collapseEmployee"
+                        aria-expanded="true" aria-controls="collapseEmployee">
+                        <span class="link-hrm">Employee</span>
+                    </a>
+                    <div id="collapseEmployee" class="collapse" data-parent="#collapseHRM">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="{{ route('employees.index') }}">All Employees</a>
+                            <a class="collapse-item" href="{{ route('employees.create') }}">Create Employee</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Employee File Menu -->
+                <div class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEmployeeFiles"
+                        aria-expanded="true" aria-controls="collapseEmployeeFiles">
+                        <span class="link-hrm">Employee Files</span>
+                    </a>
+                    <div id="collapseEmployeeFiles" class="collapse" data-parent="#collapseHRM">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="{{ route('employee-files.index') }}">All Files</a>
+                            <a class="collapse-item" href="{{ route('employee-files.create') }}">Add File</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vacation Requests Menu -->
+                <div class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVacationRequests"
+                        aria-expanded="true" aria-controls="collapseVacationRequests">
+                        <span class="link-hrm">Vacation Requests</span>
+                    </a>
+                    <div id="collapseVacationRequests" class="collapse" data-parent="#collapseHRM">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="{{ route('leave-requests.index') }}">All Requests</a>
+                            <a class="collapse-item" href="{{ route('leave-requests.create') }}">Add Request</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </li>
 @endif
+
 
                 @if (Auth::user()->role->name == 'administrator')
                     <!-- Nav Item - Pages Collapse Menu -->
