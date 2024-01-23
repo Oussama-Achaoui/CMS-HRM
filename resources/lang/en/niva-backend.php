@@ -274,4 +274,16 @@ return [
     'custom_css' => 'Custom CSS',
     'custom_js' => 'Custom JavaScript or jQuery',
 
+    'leave_requests'=>'Leave Requests',
+    'all_leave_requests'=>'All Leave Requests',
+    'back_to_leave_requests'=>'Back to Leave Requests',
+    'create_leave_equest'=>'Create Leave Request',
+    'leave_type'=>'Leave Type',
+    'start_date'=>'Start Date',
+    'end_date'=>'End Date',
+    'employee'=>'Employee',
+    'employee_file_information'=>'Employee File Information',
+    'employee_file_details'=>'Employee File Details',
+    'edit_employee'=>'Edit Employee',
+    'show_employee'=>'Show Employee',
 ];

@@ -273,4 +273,16 @@ return [
     'custom_css' => 'CSS personnalisé',
     'custom_js' => 'JavaScript ou jQuery personnalisé',
 
+    'leave_requests'=>'Demandes de congé',
+    'all_leave_requests'=>'Toutes les demandes de congé',
+    'back_to_leave_requests'=>'Retour aux demandes de congé',
+    'create_leave_equest'=>'Créer une demande de congé',
+    'leave_type'=>'Type de sortie',
+    'start_date'=>'Date de début',
+    'end_date'=>'Date de fin',
+    'employee'=>'Employé',
+    'employee_file_information'=>'Informations sur le dossier de l\'employé',
+    'employee_file_details'=>'Détails du dossier de l\'employé',
+    'edit_employee'=>'Modifier l\'employé',
+    'show_employee'=>'Voir l\'employé',
 ];

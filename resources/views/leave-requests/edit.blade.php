@@ -15,7 +15,7 @@
             <div class="card-body">
 
                 <a href="{{ route('leave-requests.index') }}"
-                    class="btn btn-primary btn-back">{{ clean(trans('Back to Leave Requests'), ['Attr.EnableID' => true]) }}</a>
+                    class="btn btn-primary btn-back">{{ clean(trans('niva-backend.back_to_leave_requests'), ['Attr.EnableID' => true]) }}</a>
 
                 @include('includes.form-errors')
 
@@ -29,10 +29,12 @@
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
-                                        <label for="employee_id">{{ clean(trans('Employee'), ['Attr.EnableID' => true]) }}:</label>
+                                        <label
+                                            for="employee_id">{{ clean(trans('Employee'), ['Attr.EnableID' => true]) }}:</label>
                                         <select name="employee_id" class="form-control">
                                             @foreach ($employees as $employee)
-                                                <option value="{{ $employee->id }}" {{ $employee->id == $leaveRequest->employee_id ? 'selected' : '' }}>
+                                                <option value="{{ $employee->id }}"
+                                                    {{ $employee->id == $leaveRequest->employee_id ? 'selected' : '' }}>
                                                     {{ $employee->first_name }} {{ $employee->last_name }}
                                                 </option>
                                             @endforeach
@@ -41,27 +43,32 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
-                                        <strong>{{ clean(trans('Leave Type'), ['Attr.EnableID' => true]) }}</strong>
-                                        <input type="text" name="type" class="form-control" value="{{ $leaveRequest->type }}"
-                                            placeholder="{{ clean(trans('Leave Type'), ['Attr.EnableID' => true]) }}" required>
+                                        <strong>{{ clean(trans('niva-backend.leave_type'), ['Attr.EnableID' => true]) }}</strong>
+                                        <input type="text" name="type" class="form-control"
+                                            value="{{ $leaveRequest->type }}"
+                                            placeholder="{{ clean(trans('niva-backend.leave_type'), ['Attr.EnableID' => true]) }}"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
-                                        <strong>{{ clean(trans('Start Date'), ['Attr.EnableID' => true]) }}</strong>
-                                        <input type="date" name="start_date" class="form-control" value="{{ $leaveRequest->start_date }}" required>
+                                        <strong>{{ clean(trans('niva-backend.start_date'), ['Attr.EnableID' => true]) }}</strong>
+                                        <input type="date" name="start_date" class="form-control"
+                                            value="{{ $leaveRequest->start_date }}" required>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
-                                        <strong>{{ clean(trans('End Date'), ['Attr.EnableID' => true]) }}</strong>
-                                        <input type="date" name="end_date" class="form-control" value="{{ $leaveRequest->end_date }}" required>
+                                        <strong>{{ clean(trans('niva-backend.end_date'), ['Attr.EnableID' => true]) }}</strong>
+                                        <input type="date" name="end_date" class="form-control"
+                                            value="{{ $leaveRequest->end_date }}" required>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
                                         <strong>{{ clean(trans('Reason'), ['Attr.EnableID' => true]) }}</strong>
-                                        <textarea name="reason" class="form-control" placeholder="{{ clean(trans('Reason'), ['Attr.EnableID' => true]) }}" required>{{ $leaveRequest->reason }}</textarea>
+                                        <textarea name="reason" class="form-control" placeholder="{{ clean(trans('Reason'), ['Attr.EnableID' => true]) }}"
+                                            required>{{ $leaveRequest->reason }}</textarea>
                                     </div>
                                 </div>
                                 <!-- Add more fields as needed -->

@@ -190,7 +190,7 @@
                     </div>
                 </li>
             @endif
-            
+
             @if (Auth::user()->role->name == 'administrator')
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
@@ -202,7 +202,8 @@
                     <div id="collapseFiles" class="collapse" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <a class="collapse-item" href="{{ route('employee-files.index') }}">Tous les Dossiers</a>
-                            <a class="collapse-item" href="{{ route('employee-files.create') }}">Ajouter un Dossier</a>
+                            <a class="collapse-item" href="{{ route('employee-files.create') }}">Ajouter un
+                                Dossier</a>
                         </div>
                     </div>
                 </li>
@@ -378,7 +379,13 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>{{ clean(trans('niva-backend.copyright_text'), ['Attr.EnableID' => true]) }}</span>
+                        @if (app()->getLocale() == 'en')
+                            <span>Copyright © {{ date('Y') }}. All rights reserved By CodeUp</span>
+                        @elseif(app()->getLocale() == 'عربى')
+                            <span>حقوق النشر © {{ date('Y') }}. جميع الحقوق محفوظة. بواسطة CodeUp</span>
+                        @else
+                            <span>Droits d'auteur © {{ date('Y') }}. Tous droits réservés Par CodeUp</span>
+                        @endif
                     </div>
                 </div>
             </footer>

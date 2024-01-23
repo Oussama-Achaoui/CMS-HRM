@@ -14,15 +14,17 @@
 
                 @include('includes.form-errors')
 
-                <form action="{{ route('employee-files.update', $employeeFile->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('employee-files.update', $employeeFile->id) }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
                     <div class="form-group">
-                        <label for="employee_id">Employee:</label>
+                        <label for="employee_id">{{ clean(trans('niva-backend.employee'), ['Attr.EnableID' => true]) }}</label>
                         <select name="employee_id" class="form-control">
                             @foreach ($employees as $employee)
-                                <option value="{{ $employee->id }}" {{ $employeeFile->employee_id == $employee->id ? 'selected' : '' }}>
+                                <option value="{{ $employee->id }}"
+                                    {{ $employeeFile->employee_id == $employee->id ? 'selected' : '' }}>
                                     {{ $employee->first_name }} {{ $employee->last_name }}
                                 </option>
                             @endforeach
@@ -31,7 +33,8 @@
 
                     <div class="form-group">
                         <label for="file_type">File Type:</label>
-                        <input type="text" name="file_type" class="form-control" value="{{ $employeeFile->file_type }}" required>
+                        <input type="text" name="file_type" class="form-control" value="{{ $employeeFile->file_type }}"
+                            required>
                     </div>
 
                     <div class="form-group">

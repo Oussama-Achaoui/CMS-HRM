@@ -30,15 +30,21 @@
                                     <td>{{ $file->employee->first_name }} {{ $file->employee->last_name }}</td>
                                     <td>{{ $file->file_type }}</td>
                                     <td>
-                                        <a href="{{ route('employee-files.show', $file->id) }}" class="btn btn-info btn-sm">Voir</a>
-                                        <a href="{{ route('employee-files.edit', $file->id) }}" class="btn btn-warning btn-sm">Modifier</a>
-                                    @if ($file-> file_path)
-                                        <a href="{{ route('employee-files.download', $file->id) }}" class="btn btn-secondary btn-sm" target="_blank">Télécharger le fichier</a>
-                                    @endif
-                                        <form action="{{ route('employee-files.destroy', $file->id) }}" method="post" style="display: inline;">
+                                        <a href="{{ route('employee-files.show', $file->id) }}"
+                                            class="btn btn-info btn-sm"><i class="fa-solid fa-eye"></i></a>
+                                        <a href="{{ route('employee-files.edit', $file->id) }}"
+                                            class="btn btn-warning btn-sm"><i class="fa-solid fa-file-pen"></i></a>
+                                        @if ($file->file_path)
+                                            <a href="{{ route('employee-files.download', $file->id) }}"
+                                                class="btn btn-secondary btn-sm" target="_blank"><i class="fa-solid fa-download"></i></a>
+                                        @endif
+                                        <form action="{{ route('employee-files.destroy', $file->id) }}" method="post"
+                                            style="display: inline;">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette dossier ?')">Supprimer</button>
+                                            <button type="submit" class="btn btn-danger btn-sm"
+                                                onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette dossier ?')"><i
+                                                    class="fa-solid fa-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>

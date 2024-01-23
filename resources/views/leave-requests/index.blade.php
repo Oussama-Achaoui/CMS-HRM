@@ -1,17 +1,17 @@
 @extends('layouts.admin')
 
 @section('content')
-
     <!-- Begin Page Content -->
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Leave Requests</h1>
+        <h1 class="h3 mb-2 text-gray-800">{{ clean(trans('niva-backend.leave_requests'), ['Attr.EnableID' => true]) }}</h1>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">All Leave Requests</h6>
+                <h6 class="m-0 font-weight-bold text-primary">
+                    {{ clean(trans('niva-backend.all_leave_requests'), ['Attr.EnableID' => true]) }}</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -21,8 +21,8 @@
                             <tr>
                                 <th>Employee</th>
                                 <th>Type</th>
-                                <th>Start Date</th>
-                                <th>End Date</th>
+                                <th>niva-backend.start_date</th>
+                                <th>niva-backend.end_date</th>
                                 <th>Reason</th>
                                 <th>Actions</th>
                             </tr>
@@ -36,12 +36,17 @@
                                     <td>{{ $request->end_date }}</td>
                                     <td>{{ $request->reason }}</td>
                                     <td>
-                                        <a href="{{ route('leave-requests.show', $request->id) }}" class="btn btn-warning btn-sm">Voir</a>
-                                        <a href="{{ route('leave-requests.edit', $request->id) }}" class="btn btn-info btn-sm">Modifier</a>
-                                        <form method="POST" action="{{ route('leave-requests.destroy', $request->id) }}" style="display: inline;">
+                                        <a href="{{ route('leave-requests.show', $request->id) }}"
+                                            class="btn btn-warning btn-sm"><i class="fa-solid fa-eye"></i></a>
+                                        <a href="{{ route('leave-requests.edit', $request->id) }}"
+                                            class="btn btn-info btn-sm"><i class="fa-solid fa-file-pen"></i></a>
+                                        <form method="POST" action="{{ route('leave-requests.destroy', $request->id) }}"
+                                            style="display: inline;">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette demande de congé ?')">Supprimer</button>
+                                            <button type="submit" class="btn btn-danger btn-sm"
+                                                onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette demande de congé ?')"><i
+                                                    class="fa-solid fa-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>
@@ -55,5 +60,4 @@
 
     </div>
     <!-- /.container-fluid -->
-
 @endsection

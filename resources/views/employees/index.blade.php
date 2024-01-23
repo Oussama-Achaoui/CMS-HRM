@@ -27,21 +27,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($employees  as $employee )
+                            @foreach ($employees as $employee)
                                 <tr>
                                     <td>{{ ucfirst($employee->first_name) }} {{ ucfirst($employee->last_name) }}</td>
                                     <td>{{ ucfirst($employee->role) }}</td>
                                     <td>{{ $employee->email }}</td>
                                     <td>{{ $employee->phone }}</td>
                                     <td>
-                                        <a href="{{ route('employees.show', $employee->id) }}" class="btn btn-info btn-sm">Voir</a>
-                                        <a href="{{ route('employees.edit', $employee->id) }}" class="btn btn-warning btn-sm">Modifier</a>
-                                        <a href="{{ route('employees.export-single', $employee->id) }}" class="btn btn-secondary btn-sm">Télécharger</a>
-                                        <form action="{{ route('employees.destroy', $employee->id) }}"
-                                            method="post" style="display: inline;">
+                                        <a href="{{ route('employees.show', $employee->id) }}"
+                                            class="btn btn-info btn-sm"><i class="fa-solid fa-eye"></i></a>
+                                        <a href="{{ route('employees.edit', $employee->id) }}"
+                                            class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <a href="{{ route('employees.export-single', $employee->id) }}"
+                                            class="btn btn-secondary btn-sm"><i class="fa-solid fa-download"></i></a>
+                                        <form action="{{ route('employees.destroy', $employee->id) }}" method="post"
+                                            style="display: inline;">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette demande de congé ?')">Supprimer</button>
+                                            <button type="submit" class="btn btn-danger btn-sm"
+                                                onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette demande de congé ?')"><i
+                                                    class="fa-solid fa-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>

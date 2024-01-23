@@ -18,10 +18,11 @@
                     @csrf
 
                     <div class="form-group">
-                        <label for="employee_id">Employee:</label>
+                        <label for="employee_id">{{ clean(trans('niva-backend.employee'), ['Attr.EnableID' => true]) }}</label>
                         <select name="employee_id" class="form-control">
                             @foreach ($employees as $employee)
-                                <option value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
+                                <option value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}
+                                </option>
                             @endforeach
                         </select>
                     </div>
@@ -30,7 +31,7 @@
                         <label for="file_type">File Type:</label>
                         <input type="text" name="file_type" class="form-control" placeholder="File Type" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="file">File:</label>
                         <input type="file" class="form-control" name="file" required>

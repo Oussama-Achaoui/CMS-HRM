@@ -20,15 +20,15 @@
                         <td>{{ $leaveRequest->employee_id }}</td>
                     </tr>
                     <tr>
-                        <th>{{ clean(trans('Leave Type'), ['Attr.EnableID' => true]) }}:</th>
+                        <th>{{ clean(trans('niva-backend.leave_type'), ['Attr.EnableID' => true]) }}:</th>
                         <td>{{ $leaveRequest->type }}</td>
                     </tr>
                     <tr>
-                        <th>{{ clean(trans('Start Date'), ['Attr.EnableID' => true]) }}:</th>
+                        <th>{{ clean(trans('niva-backend.start_date'), ['Attr.EnableID' => true]) }}:</th>
                         <td>{{ $leaveRequest->start_date }}</td>
                     </tr>
                     <tr>
-                        <th>{{ clean(trans('End Date'), ['Attr.EnableID' => true]) }}:</th>
+                        <th>{{ clean(trans('niva-backend.end_date'), ['Attr.EnableID' => true]) }}:</th>
                         <td>{{ $leaveRequest->end_date }}</td>
                     </tr>
                     <tr>
@@ -38,7 +38,8 @@
                     <!-- Add more fields as needed -->
                 </table>
 
-                <a href="{{ route('leave-requests.index') }}" class="btn btn-primary">Back to Leave Requests</a>
+                <a href="{{ route('leave-requests.index') }}"
+                    class="btn btn-primary">{{ clean(trans('niva-backend.back_to_leave_requests'), ['Attr.EnableID' => true]) }}</a>
 
             </div>
         </div>

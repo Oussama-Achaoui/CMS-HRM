@@ -79,7 +79,7 @@
 
                                 <div class="col-xs-12 col-sm-12 col-md-12 text-right">
                                     <button type="submit"
-                                        class="btn btn-primary">Modifier l'Employé</button>
+                                        class="btn btn-primary">{{ clean( trans('niva-backend.edit_employee') , array('Attr.EnableID' => true)) }}</button>
                                 </div>
                             </div>
                         </form>
