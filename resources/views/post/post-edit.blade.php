@@ -81,7 +81,11 @@
 
                                     <div class="form-group">
                                         <strong>{{clean( trans('niva-backend.body') , array('Attr.EnableID' => true))}}</strong>
-                                        <textarea name="body" class="form-control" id="body" rows="20">{{clean( $post->body , array('Attr.EnableID' => true))}}</textarea>
+                                        {{-- <textarea name="body" class="form-control" id="body" rows="20">{{clean( $post->body , array('Attr.EnableID' => true))}}</textarea> --}}
+                                        <input type="text" name="body" id="hidden-body-field" value="{{$post->body}}" hidden>
+                                        <div id="body-editor" >
+                                            {!! $post->body !!}
+                                        </div>
                                     </div>
 
                                      <div class="row">

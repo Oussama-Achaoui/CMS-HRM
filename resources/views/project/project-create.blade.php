@@ -108,7 +108,9 @@
 
                                     <div class="form-group">
                                         <strong>{{clean( trans('niva-backend.body') , array('Attr.EnableID' => true))}}</strong>
-                                        <textarea name="body" class="form-control" id="body" rows="5"></textarea>
+                                        <input type="text" name="body" id="hidden-body-field" value="" hidden>
+                                                <div id="body-editor">
+                                                </div>
                                     </div>
 
                                     <div class="row">

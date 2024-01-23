@@ -318,10 +318,12 @@
                                 <div class="copyright-text">
                                     {{-- {!!$headerfooter->footer_copyright!!} --}}
                                     @if(app()->getLocale() == 'en')
-                                        <p>Droits d'auteur © {{ date('Y') }}. Tous droits réservés par CodeUp. Nous suivons toute intention de piratage</p>
+                                        <p>Copyright © {{date('Y') }}. All rights reserved By CodeUp</p>
                                     @elseif(app()->getLocale() == 'عربى')
-                                        <p>حقوق الطبع والنشر © {{date('Y') }}. جميع الحقوق محفوظة لشركة CodeUp. نحن نتتبع أي نية للقرصنة</p>
-                                    @endif
+                                        <p>حقوق النشر © {{date('Y') }}. جميع الحقوق محفوظة. بواسطة CodeUp</p>
+                                    @else
+                                        <p>Droits d'auteur © {{date('Y') }}. Tous droits réservés Par CodeUp</p>
+                                        @endif
                                 </div>
                             </div>
                             

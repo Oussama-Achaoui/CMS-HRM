@@ -1,22 +1,20 @@
 <?php
 
-
 return [
 
-
-	'back_homepage' => 'Back to Home page',
-	'back_testimonial' => 'Back to testimonials',
-	'back_slider' => 'Back to sliders',
-	'back_services' => 'Back to services',
-	'back_projectpage' => 'Back to Project page',
-	'back_categories' => 'Back to categories',
-	'back_pricingpage' => 'Back to Pricing page',
-	'back_blogpage' => 'Back to Blog page',
-	'back_aboutpage' => 'Back to About page',
-	'back_pages' => 'Back to Pages',
-	'back_menu' => 'Back to Menu links',
-	'back_members' => 'Back to Members',
-	'back_media' => 'Back to Media',
+    'back_homepage' => 'Back to Home page',
+    'back_testimonial' => 'Back to testimonials',
+    'back_slider' => 'Back to sliders',
+    'back_services' => 'Back to services',
+    'back_projectpage' => 'Back to Project page',
+    'back_categories' => 'Back to categories',
+    'back_pricingpage' => 'Back to Pricing page',
+    'back_blogpage' => 'Back to Blog page',
+    'back_aboutpage' => 'Back to About page',
+    'back_pages' => 'Back to Pages',
+    'back_menu' => 'Back to Menu links',
+    'back_members' => 'Back to Members',
+    'back_media' => 'Back to Media',
     'back_contact_page' => 'Back to Contact page',
     'back_clients_page' => 'Back to Clients page',
 
@@ -26,7 +24,6 @@ return [
     'users' => 'Users',
     'create_user' => 'Create user',
     'back_user' => 'Back to users',
-    'create_user' => 'Create user',
     'edit_user' => 'Edit user',
 
     'name' => 'Name',
@@ -58,11 +55,10 @@ return [
     'create' => 'Create',
     'view_all' => 'View All',
 
-  
     'all_testimonials' => 'All testimonials',
     'create_testimonial' => 'Create testimonial',
     'edit_testimonial' => 'Edit testimonial',
-    
+
     'position' => 'Position',
     'facebook' => 'facebook',
     'twitter' => 'twitter',
@@ -71,7 +67,6 @@ return [
     'title' => 'Title',
     'description' => 'Description',
 
-   
     'create_slider' => 'Create slider',
     'all_sliders' => 'All sliders',
     'edit_slider' => 'Edit slider',
@@ -80,7 +75,6 @@ return [
     'button_text' => 'Button text',
     'button_link' => 'Button link',
 
-   
     'settings' => 'Settings',
     'home_settings' => 'Home Settings',
     'pricing_settings' => 'Pricing Settings',
@@ -88,7 +82,7 @@ return [
     'headerfooter_settings' => 'Header Footer settings',
     'blog_settings' => 'Blog settings',
     'about_settings' => 'About settings',
-    
+
     'enable_disable_schema' => 'Enable or disable Schema',
     'enable_disable_fb_pixel' => 'Enable or disable Facebook Pixel',
     'pixel_code' => 'Facebook Pixel code',
@@ -174,7 +168,7 @@ return [
     'create_project' => 'Create project',
     'create_post' => 'Create post',
     'edit_project' => 'Edit project',
-    'duration_project' => 'Duration project',
+    'duration_project' => 'Project duration',
     'client' => 'Client',
     'clients' => 'Clients',
     'all_pricings' => 'All pricings',
@@ -187,7 +181,7 @@ return [
     'no' => 'No',
     'yes' => 'Yes',
     'post' => 'Post',
-    'featured_badge' => 'Is featured - text badge',
+    'featured_badge' => 'Featured badge',
 
     'create_article' => 'Create article',
     'edit_article' => 'Edit article',
@@ -199,23 +193,21 @@ return [
     'create_menu' => 'Create menu link',
     'edit_menu' => 'Edit menu link',
 
-    'on_off_submenu' => 'Enable or disable sub-menu',
+    'on_off_submenu' => 'Enable or disable submenu',
     'html_submenu' => 'HTML Submenu',
-    'html_submenu_ex' => 'HTML code - submenu example',
-    'html_submenu_link_test' => 'Submenu test',
-
+    'html_submenu_ex' => 'HTML Code - Submenu example',
+    'html_submenu_link_test' => 'Submenu test link',
 
     'all_members' => 'All members',
-    'create_member' => 'Create members',
-    'edit_member' => 'Edit members',
+    'create_member' => 'Create member',
+    'edit_member' => 'Edit member',
 
     'all_media' => 'All media',
     'media' => 'Media',
     'upload_image' => 'Upload image',
     'created' => 'Created',
     'copy_url' => 'Copy URL',
-    'accepted_files' => 'AcceptedFiles: .jpeg, .jpg, .png, .gif, .webp',
-
+    'accepted_files' => 'Accepted files: .jpeg, .jpg, .png, .gif, .webp',
 
     'dashboard' => 'Dashboard',
     'all_posts' => 'All posts',
@@ -223,16 +215,15 @@ return [
     'services' => 'Services',
     'title_log_favicon' => 'Website Settings',
     'main_menu' => 'Main menu - Navigation',
-    'header_and_footer' => 'Header and footer',
+    'header_and_footer' => 'Header and Footer',
 
     'keywords' => 'SEO Keywords',
-    'contact_address' => 'Contact address',
+    'contact_address' => 'Contact Address',
     'author' => 'Author',
-    'enable_disable_ogg' => 'Enable or disable OGgraph',
-    'enable_disable_anali' => 'Enable or disable analytics', 
-    'tracking_code' => 'Analytics Tracking Code',
+    'enable_disable_ogg' => 'Enable or disable OG graph',
+    'enable_disable_anali' => 'Enable or disable Analytics',
+    'tracking_code' => 'Analytic tracking code',
     'enable_disable_schema' => 'Enable or disable SchemaORG',
-
 
     'dashboard' => 'Dashboard',
     'blog' => 'Blog',
@@ -248,39 +239,39 @@ return [
     'company_name' => 'Company name',
     'company_link' => 'Company link',
 
-    'welcome_back' => 'Welcome Back!',
+    'welcome_back' => 'Welcome back!',
     'login_facebook' => 'Login with Facebook',
     'register_facebook' => 'Register with Facebook',
-    'create_acc' => 'Create an Account!',
-    'already_acc' => 'Already have an account? Login!',
+    'create_acc' => 'Create account!',
+    'already_acc' => 'Already have an account? Log in!',
 
     'logout' => 'Logout',
     'cancel' => 'Cancel',
     'logout_message' => 'Select "Logout" below if you are ready to end your current session.',
-    'ready_leave' => 'Ready to Leave?',
+    'ready_leave' => 'Ready to leave?',
 
     'view_website' => 'View website',
-    'copyright_text' => 'Copyright &copy; Sweet-Themes 2021. Please visit the documentation of this awesome project.',
-
-    'enable_disable_whatsapp' => 'Enable or disable whatsapp sticky button',
+    'copyright_text' => 'Copyright &copy; Sweet-Themes 2021. Please check the documentation for this awesome project.',
+    
+    'enable_disable_whatsapp' => 'Enable or disable WhatsApp button',
 
     'google_font' => 'Choose a font from www.fonts.google.com then paste it here',
 
-    'select_language' => 'Select a language',
+    'select_language' => 'Select language',
 
     'custom_pages' => 'Custom pages',
     'custom_templates' => 'Custom templates',
 
     'all_languages' => 'All languages',
     'create_language' => 'Create language',
-    'code_lang' => 'Code language',
-    'is_default' => 'Is default?',
+    'code_lang' => 'Language code',
+    'is_default' => 'Default?',
     'ltr_rtl' => 'LTR or RTL',
     'call_help' => 'Call for help:',
-    'mail_us' => 'Mail to us:',
+    'mail_us' => 'Mail us:',
     'our_address' => 'Our address:',
 
-    'custom_css' => 'Custom css',
+    'custom_css' => 'Custom CSS',
     'custom_js' => 'Custom JavaScript or jQuery',
 
 ];

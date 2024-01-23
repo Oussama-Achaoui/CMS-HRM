@@ -66,7 +66,10 @@
 
                                     <div class="form-group">
                                         <strong>{{clean( trans('niva-backend.body') , array('Attr.EnableID' => true))}}</strong>
-                                        <textarea name="body" class="form-control" id="body" rows="5">{{clean( $page->body , array('Attr.EnableID' => true))}}</textarea>
+                                        <input type="text" name="body" id="hidden-body-field" value="{{$page->body}}" hidden>
+                                        <div id="body-editor" >
+                                            {!! $page->body !!}
+                                        </div>
                                     </div>
                                     
                                     
@@ -107,8 +110,6 @@
 
 </div>
 <!-- /.container-fluid -->
-
-
 
 
 @endsection

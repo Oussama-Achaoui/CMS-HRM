@@ -144,7 +144,7 @@
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Graphique
                                         </div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                            <canvas id="dataChart" height="150"></canvas>
+                                            <canvas id="dataChart" height="300"></canvas>
                                         </div>
                                     </div>
                                 </div>

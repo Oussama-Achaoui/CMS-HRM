@@ -131,7 +131,15 @@
     <div class="services-section">
         <div class="container">
             
-                <h3>Our Services</h3>
+                <h3>
+                    @if(app()->getLocale() == 'en')
+                    Our Services
+                    @elseif(app()->getLocale() == 'عربى')
+                    خدماتنا
+                    @else
+                    Nos Services
+                    @endif
+                </h3>
 
                 <div class="service-boxes-slider owl-carousel ">
                     
@@ -237,7 +245,9 @@
                                     </div>
                                 </a>
                                 <div class="post-categories">
-                                   <p>{{$post->category->name}}</p>
+                                    @if($post->category)
+                                        <p>{{$post->category->name}}</p>
+                                    @endif
                                 </div>
                             </div>
 
@@ -246,7 +256,9 @@
                                    <span class="post-date"><i class="far fa-clock"></i> {{ date('d.M.Y', strtotime($post->created_at)) }}</span>
                                    <span class="post-author">
                                    <i class="far fa-user" ></i>
-                                   <a href="#0">{{$post->user->name}}</a>
+                                   @if($post->user)
+                                        <a href="#0">{{$post->user->name}}</a>
+                                    @endif
                                    </span>
                                 </div>
                                 <h3 class="post-name">

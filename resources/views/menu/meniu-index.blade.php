@@ -64,17 +64,10 @@
                             <th><input type="checkbox" id="options"></th>
                             <th>{{clean( trans('niva-backend.name') , array('Attr.EnableID' => true))}}</th>
                             <th>{{clean( trans('niva-backend.link') , array('Attr.EnableID' => true))}}</th>
-                            <th>{{clean( trans('niva-backend.order') , array('Attr.EnableID' => true))}}</th>
+                            {{-- <th>{{clean( trans('niva-backend.order') , array('Attr.EnableID' => true))}}</th> --}}
+                            <th>Action</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th><input type="checkbox" id="options1"></th>
-                            <th>{{clean( trans('niva-backend.name') , array('Attr.EnableID' => true))}}</th>
-                            <th>{{clean( trans('niva-backend.link') , array('Attr.EnableID' => true))}}</th>
-                            <th>{{clean( trans('niva-backend.order') , array('Attr.EnableID' => true))}}</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
                         @if($menus)
                             @foreach($menus->sortBy('order') as $menu)
@@ -83,11 +76,13 @@
                                     <td class="menu-name" data-label="Name">
                                         <div class="float-left-menu-name">
                                             <p>{{$menu->name}}</p>
-                                            <a href="{{ route('menu.edit', $menu->id) . '?language=' . request()->input('language')}}">{{clean( trans('niva-backend.edit') , array('Attr.EnableID' => true))}}</a>
                                         </div>
                                     </td>
                                     <td class="menu-link" data-label="link">{{$menu->link}}</td>
-                                    <td data-label="link">{{$menu->order}}</td>
+                                    {{-- <td data-label="link">{{$menu->order}}</td> --}}
+                                    <td data-label="link">
+                                        <a href="{{ route('menu.edit', $menu->id) . '?language=' . request()->input('language')}}">{{clean( trans('niva-backend.edit') , array('Attr.EnableID' => true))}}</a>
+                                    </td>
                                 </tr>
                              @endforeach
                         @endif

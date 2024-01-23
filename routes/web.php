@@ -32,7 +32,8 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmployeeFileController;
 use App\Http\Controllers\LeaveRequestController;
 use App\Http\Controllers\PerformanceReviewController;
-
+use App\Models\Language;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +48,7 @@ use App\Http\Controllers\PerformanceReviewController;
 
 
 
-
+// Route::get('/langtest', function () { echo Language::all();; })->name('home');
 
 Route::group(['middleware' => 'setlang'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');

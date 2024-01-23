@@ -36,7 +36,6 @@
 
                         <form action="{{route('menu.store')}}" method="POST" enctype="multipart/form-data">
                             @csrf
-
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
@@ -79,10 +78,10 @@
                                         </div>
                                     </div>
                        
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <strong>{{clean( trans('niva-backend.order') , array('Attr.EnableID' => true))}}</strong>
                                         <input type="text" name="order" class="form-control" placeholder="Order">
-                                    </div>
+                                    </div> --}}
 
 
                                     <div class="form-group">
