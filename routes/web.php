@@ -157,7 +157,7 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('admin/employee-files', EmployeeFileController::class);
     Route::get('employee-files/{id}/download', [EmployeeFileController::class, 'download'])->name('employee-files.download');
 
-    Route::resource('leave-requests', LeaveRequestController::class);
+    Route::resource('admin/leave-requests', LeaveRequestController::class);
 
     Route::resource('performance-reviews', PerformanceReviewController::class);
     

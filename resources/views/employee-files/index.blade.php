@@ -30,15 +30,15 @@
                                     <td>{{ $file->employee->first_name }} {{ $file->employee->last_name }}</td>
                                     <td>{{ $file->file_type }}</td>
                                     <td>
-                                        <a href="{{ route('employee-files.show', $file->id) }}" class="btn btn-secondary btn-sm">Show</a>
-                                        <a href="{{ route('employee-files.edit', $file->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="{{ route('employee-files.show', $file->id) }}" class="btn btn-info btn-sm">Voir</a>
+                                        <a href="{{ route('employee-files.edit', $file->id) }}" class="btn btn-warning btn-sm">Modifier</a>
                                     @if ($file-> file_path)
-                                        <a href="{{ route('employee-files.download', $file->id) }}" class="btn btn-info btn-sm" target="_blank">Download File</a>
+                                        <a href="{{ route('employee-files.download', $file->id) }}" class="btn btn-secondary btn-sm" target="_blank">Télécharger le fichier</a>
                                     @endif
-                                        <form action="{{ route('employee-files.destroy', $file->id) }}" method="post">
+                                        <form action="{{ route('employee-files.destroy', $file->id) }}" method="post" style="display: inline;">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette dossier ?')">Supprimer</button>
                                         </form>
                                     </td>
                                 </tr>

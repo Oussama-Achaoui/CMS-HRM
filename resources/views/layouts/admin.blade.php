@@ -211,6 +211,23 @@
             @if (Auth::user()->role->name == 'administrator')
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
+                    <a class="nav-link collapsed" href="/admin" data-toggle="collapse" data-target="#collapseleave"
+                        aria-expanded="true" aria-controls="collapseleave">
+                        <i class="fas fa-fw fa-user"></i>
+                        <span>Congés</span>
+                    </a>
+                    <div id="collapseleave" class="collapse" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="{{ route('leave-requests.index') }}">Tous les Congés</a>
+                            <a class="collapse-item" href="{{ route('leave-requests.create') }}">Ajouter un Congé</a>
+                        </div>
+                    </div>
+                </li>
+            @endif
+
+            @if (Auth::user()->role->name == 'administrator')
+                <!-- Nav Item - Pages Collapse Menu -->
+                <li class="nav-item">
                     <a class="nav-link collapsed" href="/admin" data-toggle="collapse"
                         data-target="#collapseElements" aria-expanded="true" aria-controls="collapseElements">
                         <i class="fas fa-fw fa-layer-group"></i>

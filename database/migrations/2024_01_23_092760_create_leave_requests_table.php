@@ -18,7 +18,8 @@ class CreateLeaveRequestsTable extends Migration
             $table->foreignId('employee_id')->constrained();
             $table->date('start_date');
             $table->date('end_date');
-            $table->string('status')->default('pending');
+            $table->string('reason');
+            $table->string('type');
             $table->timestamps();
         });
     }

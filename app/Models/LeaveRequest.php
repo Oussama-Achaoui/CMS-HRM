@@ -14,7 +14,7 @@ class LeaveRequest extends Model
         'start_date',
         'end_date',
         'reason',
-        // Add other attributes as needed
+        'type',
     ];
 
     // Relationships
