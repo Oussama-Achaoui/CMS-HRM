@@ -41,7 +41,7 @@
                                 <div class="col-xs-12 col-sm-6 col-md-6">
                                     <div class="form-group">
                                         <strong>Amount:</strong>
-                                        <input type="number" name="amount" class="form-control" placeholder="Enter amount" required>
+                                        <input type="number" name="amount" class="form-control" placeholder="Enter amount" required min="0">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6">

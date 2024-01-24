@@ -6,12 +6,12 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Cartes de visite</h1>
+        <h1 class="h3 mb-2 text-gray-800">Expenses</h1>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Toutes les cartes de visite</h6>
+                <h6 class="m-0 font-weight-bold text-primary">All Expenses</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -19,25 +19,30 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Nom </th>
-                                <th>Rôle</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Amount</th>
+                                <th>Transaction Date</th>
+                                <th>Payment Method</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($businessCards as $businessCard)
+                            @foreach ($expenses as $expense)
                                 <tr>
-                                    <td>{{ ucfirst($businessCard->name) }}</td>
-                                    <td>{{ $businessCard->role }}</td>
+                                    <td>{{ $expense->name }}</td>
+                                    <td>{{ $expense->description }}</td>
+                                    <td>{{ $expense->amount }}</td>
+                                    <td>{{ $expense->transaction_date }}</td>
+                                    <td>{{ $expense->payment_method }}</td>
                                     <td>
-                                        <a href="{{ route('business-cards.show', $businessCard->id) }}">View</a>
-                                        <a href="{{ route('business-cards.edit', $businessCard->id) }}">Edit</a>
-                                        <a href="{{ route('business-cards.export-single', $businessCard->id) }}">Export</a>
-                                        <form action="{{ route('business-cards.destroy', $businessCard->id) }}"
-                                            method="post">
+                                        <a href="{{ route('expenses.edit', $expense->id) }}" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <form action="{{ route('expenses.destroy', $expense->id) }}" method="post" style="display: inline;">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit">Supprimer</button>
+                                            <button type="submit" class="btn btn-danger btn-sm"
+                                                onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette demande de congé ?')"><i
+                                                    class="fa-solid fa-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>

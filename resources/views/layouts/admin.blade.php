@@ -89,10 +89,6 @@
                         </a>
                         <div id="collapsePages" class="collapse" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-
-
-
-
                                 <a class="collapse-item"
                                     href="{{ route('page.index') }}?language=@php echo $lang->code; @endphp">{{ clean(trans('niva-backend.all_pages'), ['Attr.EnableID' => true]) }}</a>
                                 <a class="collapse-item"
@@ -104,9 +100,6 @@
 
                                 <a class="collapse-item"
                                     href="{{ route('index-custom') }}?language=@php echo $lang->code; @endphp">{{ clean(trans('niva-backend.custom_templates'), ['Attr.EnableID' => true]) }}</a>
-
-
-
                             </div>
                         </div>
                     </li>
@@ -250,6 +243,59 @@
                                                 href="{{ route('leave-requests.index') }}">{{ clean(trans('niva-backend.all_vacation_requests'), ['Attr.EnableID' => true]) }}</a>
                                             <a class="collapse-item"
                                                 href="{{ route('leave-requests.create') }}">{{ clean(trans('niva-backend.create_vacation_requests'), ['Attr.EnableID' => true]) }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                @endif
+
+
+                {{-- FM  menu --}}
+                @if (Auth::user()->role->name == 'administrator')
+                    <!-- Nav Item - Pages Collapse Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                            data-target="#collapseGF" aria-expanded="true" aria-controls="collapseGF">
+                            <i class="fas fa-fw fa-user"></i>
+                            <span>Gestion Financière</span>
+                        </a>
+                        <div id="collapseGF" class="collapse" data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+                                <!-- incomes Menu -->
+                                <div class="nav-item">
+                                    <a class="nav-link collapsed dark" href="#" data-toggle="collapse"
+                                        data-target="#collapseIncome" aria-expanded="true"
+                                        aria-controls="collapseIncome">
+                                        <span
+                                            class="link-hrm">Incomes</span>
+                                    </a>
+                                    <div id="collapseIncome" class="collapse" data-parent="#collapseGF">
+                                        <div class="bg-white py-2 collapse-inner rounded dropdown-menu-right">
+                                            <a class="collapse-item"
+                                                href="{{ route('incomes.index') }}">All Incomes</a>
+                                            <a class="collapse-item"
+                                                href="{{ route('incomes.create') }}">Add Income</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- expenses Menu -->
+                                <div class="nav-item">
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                                        data-target="#collapseExpenses" aria-expanded="true"
+                                        aria-controls="collapseExpenses">
+                                        <span
+                                            class="link-hrm">Expenses</span>
+                                    </a>
+                                    <div id="collapseExpenses" class="collapse" data-parent="#collapseGF">
+                                        <div class="bg-white py-2 collapse-inner rounded dropdown-menu-right">
+                                            <a class="collapse-item"
+                                                href="{{ route('expenses.index') }}">All Expenses</a>
+                                            <a class="collapse-item"
+                                                href="{{ route('expenses.create') }}">Add Expense</a>
                                         </div>
                                     </div>
                                 </div>

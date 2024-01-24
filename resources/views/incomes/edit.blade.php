@@ -1,5 +1,3 @@
-<!-- resources/views/incomes/edit.blade.php -->
-
 @extends('layouts.admin')
 
 @section('content')
@@ -44,7 +42,7 @@
                                 <div class="col-xs-12 col-sm-6 col-md-6">
                                     <div class="form-group">
                                         <strong>Amount:</strong>
-                                        <input type="number" name="amount" class="form-control" value="{{ $income->amount }}" required>
+                                        <input type="number" name="amount" class="form-control" value="{{ $income->amount }}" required min="0">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6">
