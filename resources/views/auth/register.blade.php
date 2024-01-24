@@ -13,9 +13,12 @@
                     <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
                     <div class="col-lg-7">
                         <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">{{ __('Register') }}</h1>
-                            </div>
+                            <div class="d-flex align-items-center mb-3 pb-1">
+                                <span class="h1 fw-bold mb-0"><img src="{{asset('images/media/1705595435codeup-high-resolution-logo-transparent.png')}}" width="100px" alt="codeup"></span>
+                              </div>
+            
+                              <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Connectez-vous à votre compte</h5>
+            
                             <form class="user" method="POST" action="{{ route('register') }}">
                                 @csrf
                                 <div class="form-group row">
@@ -33,7 +36,6 @@
                                 </div>
                                 <div class="form-group">
                                     <input id="email" type="email" placeholder="{{ __('E-Mail Address') }}" class="form-control form-control-user @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -59,10 +61,7 @@
                                 <button type="submit" class="btn btn-primary btn-user btn-block">
                                     {{ __('Register') }}
                                 </button>
-                                <hr>
-                                <a  href="{{ url('auth/facebook') }}" class="btn btn-facebook btn-user btn-block">
-                                    <i class="fab fa-facebook-f fa-fw"></i> {{clean( trans('niva-backend.register_facebook') , array('Attr.EnableID' => true))}}
-                                </a>
+                               
                             </form>
                             <hr>
                             <div class="text-center">
