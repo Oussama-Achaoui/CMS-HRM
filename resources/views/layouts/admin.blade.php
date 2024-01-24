@@ -270,14 +270,14 @@
                                         data-target="#collapseIncome" aria-expanded="true"
                                         aria-controls="collapseIncome">
                                         <span
-                                            class="link-hrm">Incomes</span>
+                                            class="link-hrm">Revenus</span>
                                     </a>
                                     <div id="collapseIncome" class="collapse" data-parent="#collapseGF">
                                         <div class="bg-white py-2 collapse-inner rounded dropdown-menu-right">
                                             <a class="collapse-item"
-                                                href="{{ route('incomes.index') }}">All Incomes</a>
+                                                href="{{ route('incomes.index') }}">Tous les Revenus</a>
                                             <a class="collapse-item"
-                                                href="{{ route('incomes.create') }}">Add Income</a>
+                                                href="{{ route('incomes.create') }}">Ajouter les Revenus</a>
                                         </div>
                                     </div>
                                 </div>
@@ -288,14 +288,14 @@
                                         data-target="#collapseExpenses" aria-expanded="true"
                                         aria-controls="collapseExpenses">
                                         <span
-                                            class="link-hrm">Expenses</span>
+                                            class="link-hrm">Dépenses</span>
                                     </a>
                                     <div id="collapseExpenses" class="collapse" data-parent="#collapseGF">
                                         <div class="bg-white py-2 collapse-inner rounded dropdown-menu-right">
                                             <a class="collapse-item"
-                                                href="{{ route('expenses.index') }}">All Expenses</a>
+                                                href="{{ route('expenses.index') }}">Tous les Dépenses</a>
                                             <a class="collapse-item"
-                                                href="{{ route('expenses.create') }}">Add Expense</a>
+                                                href="{{ route('expenses.create') }}">Ajouter les Dépenses</a>
                                         </div>
                                     </div>
                                 </div>
