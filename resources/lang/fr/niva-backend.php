@@ -295,5 +295,11 @@ return [
     'all_vacation_requests'=>'Tous les congés',
     'create_vacation_requests'=>'Créer un conge',
     'back_to_employees'=>'Retour',
-    
+    'incomes'=>'Les revenus',
+    'all_incomes'=>'Tous les revenus',
+    'create_income'=>'Créer un revenu',
+    'back_to_incomes'=>'Retour',
+    'amount'=>'montant',
+    'transaction_date'=>'Date de la transaction',
+    'payment_method'=>'Méthode de paiement',
 ];
