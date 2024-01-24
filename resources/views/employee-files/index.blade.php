@@ -15,6 +15,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
+                    <a href="{{route('employee-files.create')}}" class="btn btn-primary btn-back">{{clean( trans('niva-backend.create_employee_file') , array('Attr.EnableID' => true))}}</a>
 
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>

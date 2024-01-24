@@ -36,15 +36,12 @@
                 <form action="{{route('delete.users')}}" method="POST" class="form-inline">
                 @csrf
                 @method('DELETE')
+                
                 <div class="form-group">
-                    <select name="checkbox_array" id="" class="form-control">
-                        <option value="">{{clean( trans('niva-backend.delete') , array('Attr.EnableID' => true))}}</option>
-                    </select>
+                    <input type="submit" name="delete_all" class="btn btn-danger" value="{{clean( trans('niva-backend.delete') , array('Attr.EnableID' => true))}}">
                 </div>
-
                 <div class="form-group">
-                    <input type="submit" name="delete_all" class="btn btn-primary">
-                    <input type="hidden" name="current_user" value="{{ auth()->user()->id }}">
+                    <a class="btn btn-primary" href="{{ route('users.create') }}">{{clean( trans('niva-backend.create') , array('Attr.EnableID' => true))}}</a>
                 </div>
 
 

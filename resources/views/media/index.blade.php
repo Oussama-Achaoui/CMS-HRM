@@ -37,12 +37,7 @@
 
 
                     <div class="form-group">
-                        <select name="checkBoxArray" id="" class="form-control">
-                            <option value="">{{clean( trans('niva-backend.delete') , array('Attr.EnableID' => true))}}</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                       <input type="submit" name="delete_all" class="btn btn-primary">
+                        <input type="submit" name="delete_all" class="btn btn-danger" value="{{clean( trans('niva-backend.delete') , array('Attr.EnableID' => true))}}">
                     </div>
 
 

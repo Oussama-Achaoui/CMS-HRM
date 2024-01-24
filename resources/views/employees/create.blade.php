@@ -29,19 +29,19 @@
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
                                         <strong>Prénom</strong>
-                                        <input type="text" name="first_name" class="form-control" placeholder="Prénom" required>
+                                        <input type="text" name="first_name" value="{{ old('first_name') }}" class="form-control" placeholder="Prénom" required>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
                                         <strong>Nom</strong>
-                                        <input type="text" name="last_name" class="form-control" placeholder="Nom" required>
+                                        <input type="text" name="last_name" value="{{ old('last_name') }}" class="form-control" placeholder="Nom" required>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
                                         <strong>Rôle</strong>
-                                        <input type="text" name="role" class="form-control" placeholder="Rôle" required>
+                                        <input type="text" name="role" class="form-control" placeholder="Ex: Developpeur Web" required>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">

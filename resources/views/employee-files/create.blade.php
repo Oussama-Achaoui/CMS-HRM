@@ -29,7 +29,7 @@
 
                     <div class="form-group">
                         <label for="file_type">File Type:</label>
-                        <input type="text" name="file_type" class="form-control" placeholder="File Type" required>
+                        <input type="text" name="file_type" class="form-control" value="{{ old('file_type') }}" placeholder="File Type" required>
                     </div>
 
                     <div class="form-group">

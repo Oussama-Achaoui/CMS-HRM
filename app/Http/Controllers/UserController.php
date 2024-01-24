@@ -9,7 +9,7 @@ use App\Http\Requests\UserEditRequest;
 use App\Models\Role;
 use App\Models\Photo;
 use Illuminate\Support\Facades\Session;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {

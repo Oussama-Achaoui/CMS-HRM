@@ -22,7 +22,7 @@
                                  <form method="POST" action="{{ route('login') }}" class="user">
                                     @csrf
                                     <div class="form-group">
-                                        <input id="email" type="email" class="form-control form-control-user @error('email') is-invalid @enderror" name="email" value="" required autocomplete="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." autofocus>
+                                        <input id="email" type="email" class="form-control form-control-user @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." autofocus>
 
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">

@@ -319,10 +319,10 @@
                                     {{-- {!!$headerfooter->footer_copyright!!} --}}
                                     @if(app()->getLocale() == 'en')
                                         <p>Copyright © {{date('Y') }}. All rights reserved By CodeUp</p>
-                                    @elseif(app()->getLocale() == 'عربى')
-                                        <p>حقوق النشر © {{date('Y') }}. جميع الحقوق محفوظة. بواسطة CodeUp</p>
+                                    @elseif(app()->getLocale() == 'fr')
+                                    <p>Droits d'auteur © {{date('Y') }}. Tous droits réservés Par CodeUp</p>
                                     @else
-                                        <p>Droits d'auteur © {{date('Y') }}. Tous droits réservés Par CodeUp</p>
+                                    <p>حقوق النشر © {{date('Y') }}. جميع الحقوق محفوظة. بواسطة CodeUp</p>
                                         @endif
                                 </div>
                             </div>

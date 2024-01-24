@@ -29,10 +29,10 @@
         #sidebarContainer {
             position: sticky;
             top: 0;
-            height: 100%; 
+            height: 100%;
             width: 23%;
-            overflow-y: auto; 
-            z-index: 1000; 
+            overflow-y: auto;
+            z-index: 1000;
         }
 
         .link-hrm {
@@ -114,8 +114,8 @@
 
                 @if (Auth::user()->role->name == 'administrator')
                     <li class="nav-item">
-                        <a class="nav-link collapsed" href="/admin" data-toggle="collapse" data-target="#collapseProjects"
-                            aria-expanded="true" aria-controls="collapseProjects">
+                        <a class="nav-link collapsed" href="/admin" data-toggle="collapse"
+                            data-target="#collapseProjects" aria-expanded="true" aria-controls="collapseProjects">
                             <i class="fas fa-fw fa-pencil-ruler"></i>
                             <span>{{ clean(trans('niva-backend.projects'), ['Attr.EnableID' => true]) }}</span>
                         </a>
@@ -173,8 +173,8 @@
                 @if (Auth::user()->role->name == 'administrator')
                     <!-- Nav Item - Pages Collapse Menu -->
                     <li class="nav-item">
-                        <a class="nav-link collapsed" href="/admin" data-toggle="collapse" data-target="#collapseUsers"
-                            aria-expanded="true" aria-controls="collapseUsers">
+                        <a class="nav-link collapsed" href="/admin" data-toggle="collapse"
+                            data-target="#collapseUsers" aria-expanded="true" aria-controls="collapseUsers">
                             <i class="fas fa-fw fa-user"></i>
                             <span>{{ clean(trans('niva-backend.users'), ['Attr.EnableID' => true]) }}</span>
                         </a>
@@ -188,63 +188,76 @@
                         </div>
                     </li>
                 @endif
-{{-- HRM --}}
-@if (Auth::user()->role->name == 'administrator')
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHRM"
-            aria-expanded="true" aria-controls="collapseHRM">
-            <i class="fas fa-fw fa-user"></i>
-            <span>HRM</span>
-        </a>
-        <div id="collapseHRM" class="collapse" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <!-- Employee Menu -->
-                <div class="nav-item">
-                    <a class="nav-link collapsed dark" href="#" data-toggle="collapse" data-target="#collapseEmployee"
-                        aria-expanded="true" aria-controls="collapseEmployee">
-                        <span class="link-hrm">Employee</span>
-                    </a>
-                    <div id="collapseEmployee" class="collapse" data-parent="#collapseHRM">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="{{ route('employees.index') }}">All Employees</a>
-                            <a class="collapse-item" href="{{ route('employees.create') }}">Create Employee</a>
-                        </div>
-                    </div>
-                </div>
+                
+                {{-- HRM  menu --}}
+                @if (Auth::user()->role->name == 'administrator')
+                    <!-- Nav Item - Pages Collapse Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                            data-target="#collapseHRM" aria-expanded="true" aria-controls="collapseHRM">
+                            <i class="fas fa-fw fa-user"></i>
+                            <span>HRM</span>
+                        </a>
+                        <div id="collapseHRM" class="collapse" data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+                                <!-- Employee Menu -->
+                                <div class="nav-item">
+                                    <a class="nav-link collapsed dark" href="#" data-toggle="collapse"
+                                        data-target="#collapseEmployee" aria-expanded="true"
+                                        aria-controls="collapseEmployee">
+                                        <span
+                                            class="link-hrm">{{ clean(trans('niva-backend.all_employee'), ['Attr.EnableID' => true]) }}</span>
+                                    </a>
+                                    <div id="collapseEmployee" class="collapse" data-parent="#collapseHRM">
+                                        <div class="bg-white py-2 collapse-inner rounded dropdown-menu-right">
+                                            <a class="collapse-item"
+                                                href="{{ route('employees.index') }}">{{ clean(trans('niva-backend.all_employees'), ['Attr.EnableID' => true]) }}</a>
+                                            <a class="collapse-item"
+                                                href="{{ route('employees.create') }}">{{ clean(trans('niva-backend.create_employee'), ['Attr.EnableID' => true]) }}</a>
+                                        </div>
+                                    </div>
+                                </div>
 
-                <!-- Employee File Menu -->
-                <div class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEmployeeFiles"
-                        aria-expanded="true" aria-controls="collapseEmployeeFiles">
-                        <span class="link-hrm">Employee Files</span>
-                    </a>
-                    <div id="collapseEmployeeFiles" class="collapse" data-parent="#collapseHRM">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="{{ route('employee-files.index') }}">All Files</a>
-                            <a class="collapse-item" href="{{ route('employee-files.create') }}">Add File</a>
-                        </div>
-                    </div>
-                </div>
+                                <!-- Employee File Menu -->
+                                <div class="nav-item">
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                                        data-target="#collapseEmployeeFiles" aria-expanded="true"
+                                        aria-controls="collapseEmployeeFiles">
+                                        <span
+                                            class="link-hrm">{{ clean(trans('niva-backend.all_employee_files'), ['Attr.EnableID' => true]) }}</span>
+                                    </a>
+                                    <div id="collapseEmployeeFiles" class="collapse" data-parent="#collapseHRM">
+                                        <div class="bg-white py-2 collapse-inner rounded dropdown-menu-right">
+                                            <a class="collapse-item"
+                                                href="{{ route('employee-files.index') }}">{{ clean(trans('niva-backend.all_employee_files'), ['Attr.EnableID' => true]) }}</a>
+                                            <a class="collapse-item"
+                                                href="{{ route('employee-files.create') }}">{{ clean(trans('niva-backend.create_employee_file'), ['Attr.EnableID' => true]) }}</a>
+                                        </div>
+                                    </div>
+                                </div>
 
-                <!-- Vacation Requests Menu -->
-                <div class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVacationRequests"
-                        aria-expanded="true" aria-controls="collapseVacationRequests">
-                        <span class="link-hrm">Vacation Requests</span>
-                    </a>
-                    <div id="collapseVacationRequests" class="collapse" data-parent="#collapseHRM">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="{{ route('leave-requests.index') }}">All Requests</a>
-                            <a class="collapse-item" href="{{ route('leave-requests.create') }}">Add Request</a>
-                        </div>
-                    </div>
-                </div>
+                                <!-- Vacation Requests Menu -->
+                                <div class="nav-item">
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                                        data-target="#collapseVacationRequests" aria-expanded="true"
+                                        aria-controls="collapseVacationRequests">
+                                        <span
+                                            class="link-hrm">{{ clean(trans('niva-backend.vacation_requests'), ['Attr.EnableID' => true]) }}</span>
+                                    </a>
+                                    <div id="collapseVacationRequests" class="collapse" data-parent="#collapseHRM">
+                                        <div class="bg-white py-2 collapse-inner rounded dropdown-menu-right">
+                                            <a class="collapse-item"
+                                                href="{{ route('leave-requests.index') }}">{{ clean(trans('niva-backend.all_vacation_requests'), ['Attr.EnableID' => true]) }}</a>
+                                            <a class="collapse-item"
+                                                href="{{ route('leave-requests.create') }}">{{ clean(trans('niva-backend.create_vacation_requests'), ['Attr.EnableID' => true]) }}</a>
+                                        </div>
+                                    </div>
+                                </div>
 
-            </div>
-        </div>
-    </li>
-@endif
+                            </div>
+                        </div>
+                    </li>
+                @endif
 
 
                 @if (Auth::user()->role->name == 'administrator')
@@ -281,8 +294,8 @@
                 @if (Auth::user()->role->name == 'administrator')
                     <!-- Nav Item - Pages Collapse Menu -->
                     <li class="nav-item">
-                        <a class="nav-link collapsed" href="/admin" data-toggle="collapse" data-target="#collapseSEO"
-                            aria-expanded="true" aria-controls="collapseSEO">
+                        <a class="nav-link collapsed" href="/admin" data-toggle="collapse"
+                            data-target="#collapseSEO" aria-expanded="true" aria-controls="collapseSEO">
                             <i class="fas fa-fw fa-cogs"></i>
                             <span>{{ clean(trans('niva-backend.settings'), ['Attr.EnableID' => true]) }}</span>
                         </a>
@@ -401,10 +414,10 @@
                     <div class="copyright text-center my-auto">
                         @if (app()->getLocale() == 'en')
                             <span>Copyright © {{ date('Y') }}. All rights reserved By CodeUp</span>
-                        @elseif(app()->getLocale() == 'عربى')
-                            <span>حقوق النشر © {{ date('Y') }}. جميع الحقوق محفوظة. بواسطة CodeUp</span>
-                        @else
+                        @elseif(app()->getLocale() == 'fr')
                             <span>Droits d'auteur © {{ date('Y') }}. Tous droits réservés Par CodeUp</span>
+                        @else
+                            <span>حقوق النشر © {{ date('Y') }}. جميع الحقوق محفوظة. بواسطة CodeUp</span>
                         @endif
                     </div>
                 </div>
@@ -450,7 +463,7 @@
 
     <!-- Scripts -->
     <script>
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', function() {
             var sidebarContainer = document.getElementById('sidebarContainer');
 
             // Add or remove the 'sticky' class based on the scroll position

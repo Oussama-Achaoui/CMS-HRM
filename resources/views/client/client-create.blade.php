@@ -42,11 +42,11 @@
                                     
                                     <div class="form-group">
                                         <strong>{{clean( trans('niva-backend.company_name') , array('Attr.EnableID' => true))}}</strong>
-                                        <input type="text" name="company_name" class="form-control" placeholder="">
+                                        <input type="text" name="company_name" class="form-control" placeholder="" value="{{ old('company_name') }}">
                                     </div>
                                     <div class="form-group">
                                         <strong>{{clean( trans('niva-backend.company_link') , array('Attr.EnableID' => true))}}</strong>
-                                        <input type="text" name="company_link" class="form-control" placeholder="">
+                                        <input type="text" name="company_link" class="form-control" placeholder="" value="{{ old('company_link') }}">
                                     </div>
 
                                     <div class="form-group">
