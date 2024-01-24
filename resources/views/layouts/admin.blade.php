@@ -260,7 +260,7 @@
                         <a class="nav-link collapsed" href="#" data-toggle="collapse"
                             data-target="#collapseGF" aria-expanded="true" aria-controls="collapseGF">
                             <i class="fas fa-fw fa-user"></i>
-                            <span>Gestion Financière</span>
+                            <span>{{ clean(trans('niva-backend.finance_management'), ['Attr.EnableID' => true]) }}</span>
                         </a>
                         <div id="collapseGF" class="collapse" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
@@ -270,14 +270,14 @@
                                         data-target="#collapseIncome" aria-expanded="true"
                                         aria-controls="collapseIncome">
                                         <span
-                                            class="link-hrm">Revenus</span>
+                                            class="link-hrm">{{ clean(trans('niva-backend.incomes'), ['Attr.EnableID' => true]) }}</span>
                                     </a>
                                     <div id="collapseIncome" class="collapse" data-parent="#collapseGF">
                                         <div class="bg-white py-2 collapse-inner rounded dropdown-menu-right">
                                             <a class="collapse-item"
-                                                href="{{ route('incomes.index') }}">Tous les Revenus</a>
+                                                href="{{ route('incomes.index') }}">{{ clean(trans('niva-backend.all_incomes'), ['Attr.EnableID' => true]) }}</a>
                                             <a class="collapse-item"
-                                                href="{{ route('incomes.create') }}">Ajouter les Revenus</a>
+                                                href="{{ route('incomes.create') }}">{{ clean(trans('niva-backend.create_income'), ['Attr.EnableID' => true]) }}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -288,14 +288,14 @@
                                         data-target="#collapseExpenses" aria-expanded="true"
                                         aria-controls="collapseExpenses">
                                         <span
-                                            class="link-hrm">Dépenses</span>
+                                            class="link-hrm">{{ clean(trans('niva-backend.expenses'), ['Attr.EnableID' => true]) }}</span>
                                     </a>
                                     <div id="collapseExpenses" class="collapse" data-parent="#collapseGF">
                                         <div class="bg-white py-2 collapse-inner rounded dropdown-menu-right">
                                             <a class="collapse-item"
-                                                href="{{ route('expenses.index') }}">Tous les Dépenses</a>
+                                                href="{{ route('expenses.index') }}">{{ clean(trans('niva-backend.all_expenses'), ['Attr.EnableID' => true]) }}</a>
                                             <a class="collapse-item"
-                                                href="{{ route('expenses.create') }}">Ajouter les Dépenses</a>
+                                                href="{{ route('expenses.create') }}">{{ clean(trans('niva-backend.create_expense'), ['Attr.EnableID' => true]) }}</a>
                                         </div>
                                     </div>
                                 </div>

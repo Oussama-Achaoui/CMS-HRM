@@ -296,4 +296,17 @@ return [
     'all_vacation_requests'=>'All conges',
     'create_vacation_requests'=>'Create conge',
     'back_to_employees'=>'Back to employees',
+    'incomes'=>'Revenues',
+     'all_incomes'=>'All income',
+     'create_income'=>'Create income',
+     'back_to_incomes'=>'Back',
+     'amount'=>'amount',
+     'transaction_date'=>'Transaction date',
+     'payment_method'=>'Payment method',
+     'finance_management'=>'Financial Management',
+     'create_income'=>'Add Income',
+
+     'expenses'=>'Expenses',
+     'all_expenses'=>'All expenses',
+     'create_expense'=>'Create an expense',
 ];
