@@ -1,75 +1,65 @@
 @extends('layouts.admin')
 
 @section('content')
+
     <!-- Begin Page Content -->
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">{{ clean(trans('Create Business Card'), ['Attr.EnableID' => true]) }}</h1>
+        <h1 class="h3 mb-2 text-gray-800">Create Income</h1>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">{!! trans('Create Business Card') !!}</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Create Income</h6>
             </div>
             <div class="card-body">
 
-                <a href="{{ route('business-cards.index') }}"
-                    class="btn btn-primary btn-back">{{ clean(trans('Back to Cartes de visite'), ['Attr.EnableID' => true]) }}</a>
+                <a href="{{ route('incomes.index') }}" class="btn btn-primary btn-back">Back to Incomes</a>
 
                 @include('includes.form-errors')
 
                 <div class="row">
                     <div class="col-md-12">
 
-                        <form action="{{ route('business-cards.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('incomes.store') }}" method="POST">
                             @csrf
 
                             <div class="row">
-                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="col-xs-12 col-sm-6 col-md-6">
                                     <div class="form-group">
-                                        <strong>{{ clean(trans('niva-backend.name'), ['Attr.EnableID' => true]) }}</strong>
-                                        <input type="text" name="name" class="form-control"
-                                            placeholder="{{ clean(trans('niva-backend.name'), ['Attr.EnableID' => true]) }}"
-                                            required>
+                                        <strong>Name:</strong>
+                                        <input type="text" name="name" class="form-control" placeholder="Enter name" required>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="col-xs-12 col-sm-6 col-md-6">
                                     <div class="form-group">
-                                        <strong>{{ clean(trans('Role'), ['Attr.EnableID' => true]) }}</strong>
-                                        <input type="text" name="role" class="form-control" placeholder="Role"
-                                            required>
+                                        <strong>Description:</strong>
+                                        <input type="text" name="description" class="form-control" placeholder="Enter description" required>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="col-xs-12 col-sm-6 col-md-6">
                                     <div class="form-group">
-                                        <strong>{{ clean(trans('niva-backend.phone'), ['Attr.EnableID' => true]) }}</strong>
-                                        <input type="text" name="phone" class="form-control"
-                                            placeholder="{{ clean(trans('niva-backend.phone'), ['Attr.EnableID' => true]) }}"
-                                            required>
+                                        <strong>Amount:</strong>
+                                        <input type="number" name="amount" class="form-control" placeholder="Enter amount" required min="0">
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="col-xs-12 col-sm-6 col-md-6">
                                     <div class="form-group">
-                                        <strong>{{ clean(trans('niva-backend.email'), ['Attr.EnableID' => true]) }}</strong>
-                                        <input type="email" name="email" class="form-control"
-                                            placeholder="{{ clean(trans('niva-backend.email'), ['Attr.EnableID' => true]) }}"
-                                            required>
+                                        <strong>Transaction Date:</strong>
+                                        <input type="date" name="transaction_date" class="form-control" required>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="col-xs-12 col-sm-6 col-md-6">
                                     <div class="form-group">
-                                        <strong>{{ clean(trans('niva-backend.address'), ['Attr.EnableID' => true]) }}</strong>
-                                        <input type="address" name="address" class="form-control"
-                                            placeholder="{{ clean(trans('address'), ['Attr.EnableID' => true]) }}"
-                                            required>
+                                        <strong>Payment Method:</strong>
+                                        <input type="text" name="payment_method" class="form-control" placeholder="Enter payment method" required>
                                     </div>
                                 </div>
                                 <!-- Add more fields as needed -->
 
                                 <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-                                    <button type="submit"
-                                        class="btn btn-primary">{{ clean(trans('Create Business Card'), ['Attr.EnableID' => true]) }}</button>
+                                    <button type="submit" class="btn btn-primary">Create Income</button>
                                 </div>
                             </div>
                         </form>
