@@ -30,7 +30,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmployeeFileController;
 use App\Http\Controllers\LeaveRequestController;
-use App\Http\Controllers\PerformanceReviewController;
+use App\Http\Controllers\IncomeController;
+use App\Http\Controllers\ExpenseController;
 
 
 /*
@@ -159,8 +160,9 @@ Route::middleware(['admin'])->group(function () {
 
     Route::resource('admin/leave-requests', LeaveRequestController::class);
 
-    Route::resource('performance-reviews', PerformanceReviewController::class);
+    Route::resource('admin/incomes', IncomeController::class);
     
+    Route::resource('admin/expenses', ExpenseController::class);
 
 });
 
