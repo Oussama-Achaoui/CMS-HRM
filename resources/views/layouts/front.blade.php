@@ -3,7 +3,6 @@
 
 <head>
 
-    @php $setting = App\Models\Setting::find($currentLang->id); @endphp
     <!-- Page Title -->
     <title>@yield('title', 'Codeup')</title>
     <!-- Meta Data -->
@@ -11,20 +10,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="description" content="@yield('meta')">
-    <link rel="canonical" href="{{ url()->current() }}">
-    <meta name="keywords" content="{{ $setting->keywords }}" />
-    <meta name="publisher" content="{{ url()->current() }}">
-    <meta name="copyright" content="Copyright (c) {{ $setting->title }}" />
-    <meta name="author" content="{{ $setting->author }}" />
-    <meta name="contact" content="{{ $setting->contact }}" />
-
-    <meta name="revisit-after" content="7 Days" />
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
-    <meta name="subjects" content="{{ $setting->title }}" />
-    <meta name="classification" content="{{ $setting->title }}" />
 
     <!-- Favicons -->
   <link href="{{ asset('img/favicon.png')}}" rel="icon">

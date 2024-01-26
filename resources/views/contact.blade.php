@@ -1,183 +1,104 @@
 @extends('layouts.front')
 
-@section('title') {{$contactsetting->meta_title}} @endsection
-@section('meta') {{$contactsetting->meta_description}} @endsection
+@section('title') Contact @endsection
 
 
 @section('content')
   
   
-   <div class="breadcrumb-area">
-       <h1 class="breadcrumb-title">{{$contactsetting->meta_title}}</h1>
-       <ul class="page-list">
-            <li class="item-home"><a class="bread-link" href="{{ route('home') }}" title="Home">{{$contactsetting->breadcrumbs_anchor}}</a></li>
-            <li class="separator separator-home"></li>
-            <li class="item-current">{{$contactsetting->meta_title}}</li>
-        </ul>
-   </div>
 
 
-   <div class="contant-section-page">
-      
-      <div class="container">
-        
-          <div class="row">
-                  
-                  <div class="col-md-4">
-                      <div class="contact-element-wrapper">
-                        <div class="contact-element">
-                          <div class="icon"> {!!$contactsetting->box_icon1!!}</div>
-                          <div class="content">
-                            <h3 class="title">{!!$contactsetting->box_title1!!}</h3>
-                            {!!$contactsetting->box_html1!!}
-                          </div>
-                        </div>
-                      </div>
-                  </div>
+<main id="main">
 
-                  <div class="col-md-4">
-                      <div class="contact-element-wrapper">
-                        <div class="contact-element">
-                          <div class="icon"> {!!$contactsetting->box_icon2!!}</div>
-                          <div class="content">
-                            <h3 class="title">{!!$contactsetting->box_title2!!}</h3>
-                            {!!$contactsetting->box_html2!!}
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-
-
-                  <div class="col-md-4">
-                      <div class="contact-element-wrapper">
-                        <div class="contact-element">
-                          <div class="icon"> {!!$contactsetting->box_icon3!!}</div>
-                          <div class="content">
-                            <h3 class="title">{!!$contactsetting->box_title3!!}</h3>
-                            {!!$contactsetting->box_html3!!}
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-
-
-          </div>
-
-
-      </div>
-
-   </div>
-
-  <div class="iframe-contact">
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs">
     <div class="container">
-      <div class="row">
-        
-        <div class="col-md-6">
-            <h3> {!!$contactsetting->title!!} </h3>
-            {!!$contactsetting->iframe_txt!!}
-        </div>
 
-        <div class="col-md-6">
-
-              <h3>{!!$contactsetting->form_title!!}</h3>
-
-              @if ($message = Session::get('success'))
-                  <div class="alert alert-success alert-block">
-                      <button type="button" class="close" data-dismiss="alert"><i class="fas fa-times"></i></button>    
-                      <strong>{{ $message }}</strong>
-                  </div>
-              @endif
-
-              {!! NoCaptcha::renderJs() !!}
-
-              
-
-              <form method="POST" action="{{route('contactPost')}}">
-                 
-                 @csrf
-                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                            <label for="name"> {!!$contactsetting->form_input_name!!} </label>
-                            <input name="name" type="text" class="form-control" id="name" aria-describedby="name" placeholder=" {!!$contactsetting->form_input_name!!} ">
-                            <span class="text-danger">{{ $errors->first('name') }}</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                          <label for="email">{!!$contactsetting->form_input_email!!}</label>
-                          <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                              placeholder="{!!$contactsetting->form_input_email!!}">
-                          <span class="text-danger">{{ $errors->first('email') }}</span>
-                        </div>
-                    </div>
-                    
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                            <label for="phone">{!!$contactsetting->form_input_budget!!}</label>
-                            <input name="phone" type="text" class="form-control" id="phone" aria-describedby="name" placeholder="{!!$contactsetting->form_input_budget!!}">
-                            <span class="text-danger">{{ $errors->first('phone') }}</span>
-                        </div>
-                        
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                          <label for="budget">{!!$contactsetting->form_input_phone!!}</label>
-                          <input name="budget" type="text" class="form-control" id="budget" aria-describedby="emailHelp"
-                              placeholder="{!!$contactsetting->form_input_phone!!}">
-                          <span class="text-danger">{{ $errors->first('budget') }}</span>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                    <label for="exampleInputPassword1">{!!$contactsetting->form_message!!}</label>
-                    <textarea name="comment" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    <span class="text-danger">{{ $errors->first('comment') }}</span>
-                </div>
-
-
-
-             
-                {!! NoCaptcha::display() !!}
-
-                @if ($errors->has('g-recaptcha-response'))
-                  <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
-                @endif
-
-
-                <button type="submit" class="btn btn-style1">{!!$contactsetting->button_text!!}</button>
-            </form>
-        
-        </div>
-
-
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Contact</h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Contact</li>
+        </ol>
       </div>
+
     </div>
+  </section><!-- End Breadcrumbs -->
+
+  <!-- ======= Contact Section ======= -->
+  <div class="map-section">
+    <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
   </div>
 
- 
+  <section id="contact" class="contact">
+    <div class="container">
 
-   <div class="clients-section">
-        <div class="container">
-            
-            <div class="clients-slider owl-carousel">
-                  @foreach($clients as $client)
-                  <div class="clients-slide">
-                      <a title="{{$client->company_name}}" target="_blank" href="{{$client->company_link}}"><img class="client_image owl-lazy" data-src="{{$client->photo ? '/images/media/' . $client->photo->file : '/public/img/200x200.png'}}" alt="{{$client->company_name}}"></a>
-                  </div>
-                  @endforeach
+      <div class="row justify-content-center" data-aos="fade-up">
+
+        <div class="col-lg-10">
+
+          <div class="info-wrap">
+            <div class="row">
+              <div class="col-lg-4 info">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>A108 Adam Street<br>New York, NY 535022</p>
+              </div>
+
+              <div class="col-lg-4 info mt-4 mt-lg-0">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>info@example.com<br>contact@example.com</p>
+              </div>
+
+              <div class="col-lg-4 info mt-4 mt-lg-0">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+1 5589 55488 51<br>+1 5589 22475 14</p>
+              </div>
             </div>
-            
+          </div>
+
         </div>
+
+      </div>
+
+      <div class="row mt-5 justify-content-center" data-aos="fade-up">
+        <div class="col-lg-10">
+          <form method="POST" action="{{route('contactPost')}}"  class="php-email-form">
+          @csrf
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            </div>
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <div class="text-center">
+              <button type="submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
     </div>
+  </section><!-- End Contact Section -->
 
-
-
+</main>
+<!-- End #main -->
 
 @endsection
 
