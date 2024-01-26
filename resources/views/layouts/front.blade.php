@@ -46,30 +46,15 @@
     
           <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-              <li><a href="{{ route('home') }}" class="active">Home</a></li>
+              <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
     
-              <li><a href="{{ route('about') }}"><span>About</span></a>
-                {{-- <ul>
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="team.html">Team</a></li>
-                  <li><a href="testimonials.html">Testimonials</a></li>
-                  <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                    <ul>
-                      <li><a href="#">Deep Drop Down 1</a></li>
-                      <li><a href="#">Deep Drop Down 2</a></li>
-                      <li><a href="#">Deep Drop Down 3</a></li>
-                      <li><a href="#">Deep Drop Down 4</a></li>
-                      <li><a href="#">Deep Drop Down 5</a></li>
-                    </ul>
-                  </li>
-                </ul> --}}
-              </li>
+              <li><a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">About</a></li>
     
-              <li><a href="javascript:;">Services</a></li>
-              <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
-              <li><a href="{{ route('pricing') }}">Pricing</a></li>
-              <li><a href="{{ route('blog') }}">Blog</a></li>
-              <li><a href="{{ route('contact') }}">Contact</a></li>
+              <li><a href="javascript:;" class="{{ request()->routeIs('') ? 'active' : '' }}">Services</a></li>
+              <li><a href="{{ route('portfolio') }}" class="{{ request()->routeIs('portfolio') ? 'active' : '' }}">Portfolio</a></li>
+              <li><a href="{{ route('pricing') }}" class="{{ request()->routeIs('pricing') ? 'active' : '' }}"> Pricing</a></li>
+              <li><a href="{{ route('blog') }}" class="{{ request()->routeIs('blog') ? 'active' : '' }}">Blog</a></li>
+              <li><a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a></li>
     
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
