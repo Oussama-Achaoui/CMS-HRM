@@ -31,101 +31,6 @@
   <!-- Template Main CSS File -->
   <link href="{{ asset('css/style.css')}}" rel="stylesheet">
 
-
-
-    {{-- @if ($setting->OGgraph_switch == 1)
-        <meta property="og:title" content="@yield('title')" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="{{ route('home') }}" />
-        <meta property="og:image"
-            content="{{ route('home') }}{{ $setting->photo ? '/images/media/' . $setting->photo->file : '/public/img/200x200.png' }}" />
-        <meta property="og:site_name" content="{{ $setting->author }}" />
-        <meta property="og:description" content="@yield('meta')" />
-    @endif --}}
-
-    {{-- @if ($setting->analytics_switch == 1)
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{ $setting->analytics }}"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-
-            gtag('config', '{{ $setting->analytics }}');
-        </script>
-    @endif --}}
-
-    {{-- @if ($setting->facebook_pixel_switch == 1)
-        <!-- Facebook Pixel Code -->
-        <script>
-            ! function(f, b, e, v, n, t, s) {
-                if (f.fbq) return;
-                n = f.fbq = function() {
-                    n.callMethod ?
-                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-                };
-                if (!f._fbq) f._fbq = n;
-                n.push = n;
-                n.loaded = !0;
-                n.version = '2.0';
-                n.queue = [];
-                t = b.createElement(e);
-                t.async = !0;
-                t.src = v;
-                s = b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t, s)
-            }(window, document, 'script',
-                'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '{{ $setting->facebook_pixel }}');
-            fbq('track', 'PageView');
-        </script>
-        <noscript><img height="1" width="1" style="display:none"
-                src="https://www.facebook.com/tr?id={{ $setting->facebook_pixel }}&ev=PageView&noscript=1" /></noscript>
-        <!-- End Facebook Pixel Code -->
-    @endif --}}
-
-    <!-- Fonts -->
-    {{-- <link rel="preconnect" href="https://fonts.gstatic.com"> --}}
-
-
-    {{-- @if ($currentLang->rtl == 1)
-        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap"
-            rel="stylesheet">
-    @else
-        <link href="{{ $setting->font }}" rel="stylesheet">
-    @endif --}}
-    <!-- Styles -->
-    {{-- <link href="{{ asset('css/front/bootstrap.min.css') }}" type="text/css" rel="stylesheet">
-    <link href="{{ asset('css/libs/fontawesome.min.css') }}" type="text/css" rel="stylesheet">
-    <link href="{{ asset('css/front/owl.carousel.min.css') }}" type="text/css" rel="stylesheet">
-    <link href="{{ asset('css/front/niva.css') }}" type="text/css" rel="stylesheet"> --}}
-    {{-- @yield('styles') --}}
-
-    {{-- @if ($currentLang->rtl == 1)
-        <link href="{{ asset('css/front/rtl.css') }}" type="text/css" rel="stylesheet">
-    @endif --}}
-
-
-    <!-- Inline Styles -->
-    {{-- <style>
-        body {
-            @if ($currentLang->rtl == 1)
-                font-family: 'Cairo', sans-serif;
-            @else
-                font-family: 'Nunito', sans-serif;
-            @endif
-        }
-    </style> --}}
-
-    {{-- @if ($setting->custom_css)
-        <style>
-            {!! $setting->custom_css !!}
-        </style>
-    @endif --}}
-
 </head>
 
 <body>
@@ -134,16 +39,16 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
     
-          <h1 class="logo me-auto"><a href="index.html"><span>Com</span>pany</a></h1>
+          <h1 class="logo me-auto"><a href="index.html"><span>Code</span>Up</a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
-          <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+          {{-- <a href="index.html" class="logo me-auto me-lg-0"><img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid"></a> --}}
     
           <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="{{ route('home') }}" class="active">Home</a></li>
     
-              <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
+              <li><a href="{{ route('about') }}"><span>About</span></a>
+                {{-- <ul>
                   <li><a href="about.html">About Us</a></li>
                   <li><a href="team.html">Team</a></li>
                   <li><a href="testimonials.html">Testimonials</a></li>
@@ -156,14 +61,14 @@
                       <li><a href="#">Deep Drop Down 5</a></li>
                     </ul>
                   </li>
-                </ul>
+                </ul> --}}
               </li>
     
-              <li><a href="services.html">Services</a></li>
-              <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="javascript:;">Services</a></li>
+              <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
+              <li><a href="{{ route('pricing') }}">Pricing</a></li>
+              <li><a href="{{ route('blog') }}">Blog</a></li>
+              <li><a href="{{ route('contact') }}">Contact</a></li>
     
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
@@ -283,8 +188,6 @@
 
         </nav>
     </header> --}}
-
-
 
   <!-- ======= Hero Section ======= -->
 
