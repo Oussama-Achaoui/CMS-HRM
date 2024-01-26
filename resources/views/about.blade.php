@@ -1,136 +1,274 @@
 @extends('layouts.front')
 
-@section('title') {{$aboutsetting->meta_title}} @endsection
-@section('meta') {{$aboutsetting->meta_description}} @endsection
-
-@section('styles')
-<link href="{{ asset('css/front/magnific.min.css')}}" type="text/css" rel="stylesheet">
-@endsection
+@section('title') À propos @endsection
 
 @section('content')
-  
-  
-   <div class="breadcrumb-area">
-       <h1 class="breadcrumb-title">{{$aboutsetting->meta_title}}</h1>
-       <ul class="page-list">
-            <li class="item-home"><a class="bread-link" href="{{ route('home') }}" title="Home">{{$aboutsetting->breadcrumbs_anchor}}</a></li>
-            <li class="separator separator-home"></li>
-            <li class="item-current">{{$aboutsetting->meta_title}}</li>
-        </ul>
-   </div>
 
-   <div class="about-us">
-       <div class="container">
-           <div class="row align-items-center">
-               <div class="col-md-5">
-       
-                   <div class="simpleParallax-video">
-                        <div class="simpleParallax">
-                            <img width="500" height="665" src="/public/img/loading-blog.gif" class="lazy thumparallax img-fluid" data-src="{{$aboutsetting->about_image}}" alt="about-image">
-                        </div>
-                        <a class="popup-vimeo-video" href="{{$aboutsetting->about_ytlink}}">
-                            <i class="far fa-play-circle"></i>
-                        </a>
-                    </div>
-               </div>
-               <div class="col-md-7">
+<main id="main">
 
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
 
-                    <h4 class="about-heading1-home">{{$aboutsetting->about_subtitle}}</h4>
-                    <h3 class="about-heading2-home">{{$aboutsetting->about_title}}</h3>
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>About</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>About</li>
+          </ol>
+        </div>
 
-                    {!!$aboutsetting->about_description!!}
+      </div>
+    </section><!-- End Breadcrumbs -->
 
-                    <a href="{{$aboutsetting->about_buttonlink}}" target="_self" class="btn btn-style1"><span>{{$aboutsetting->about_buttontext}}</span></a>
-       
-                   
-               </div>
-           </div>
-       </div>
-   </div>
-   
-   <div class="members-section">
-        <div class="container">
-            <h3 class="members-heading1">{{$aboutsetting->member_title_section}}</h3>
-        
+    <!-- ======= About Us Section ======= -->
+    <section id="about-us" class="about-us">
+      <div class="container" data-aos="fade-up">
 
-            <div class="row">
-                @foreach($members as $member)
-                  <div class="col-md-4">
-                      <div class="niva-team">
-                          <div class="thumbnail"> 
-                              <img width="350" height="350" class="lazy img-fluid" src="/public/img/loading-blog.gif" data-src="{{$member->photo ? '/images/media/' . $member->photo->file : '/public/img/200x200.png'}}" alt="team-niva">
-                          </div>
-                          <div class="content">
-                              <h5 class="title">{{$member->name}}</h5>
-                              <p class="position">{{$member->position}}</p>
-                          </div>
-                          <ul class="social-icon">
-                              <li><a target="_blank" rel="noopener" href="{{$member->facebook}}"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                              <li><a target="_blank" rel="noopener" href="{{$member->linkedin}}"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-                              <li><a target="_blank" rel="noopener" href="{{$member->twitter}}"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                          </ul>
-                      </div>
-                  </div>
-                @endforeach
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h2>Eum ipsam laborum deleniti velitena</h2>
+            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequa</li>
+              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</li>
+            </ul>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Our Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Our <strong>Team</strong></h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="{{ asset('img/team/team-1.jpg') }}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Walter White</h4>
+                <span>Chief Executive Officer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="{{ asset('img/team/team-2.jpg') }}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sarah Jhonson</h4>
+                <span>Product Manager</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+              <div class="member-img">
+                <img src="{{ asset('img/team/team-3.jpg') }}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>William Anderson</h4>
+                <span>CTO</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="member-img">
+                <img src="{{ asset('img/team/team-4.jpg') }}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Amanda Jepson</h4>
+                <span>Accountant</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Our Team Section -->
+
+    <!-- ======= Our Skills Section ======= -->
+    <section id="skills" class="skills">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Our <strong>Skills</strong></h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row skills-content">
+
+          <div class="col-lg-6" data-aos="fade-up">
+
+            <div class="progress">
+              <span class="skill">HTML <i class="val">100%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
             </div>
 
-        </div>
-    </div>
-
-    <div class="testimonial-section">
-
-        <div class="testimonial-section-slider owl-carousel">
-
-            @foreach($testimonials as $testimonial)
-            <blockquote class="testimonial-slide">
-                <div class="section_title">{{$testimonial->subtitle}}</div>
-                <span class="testimonial_slider_title">{{$testimonial->title}}</span>
-                    <div class="testimonial-area">
-                        <div class="testimonial-layoutArea">
-                           <p>{{$testimonial->description}}</p>
-                        </div>
-                    </div>
-                <div class="testimonials_slider_name"> {{$testimonial->name}}<span> - {{$testimonial->position}}</span></div>
-            </blockquote>
-            @endforeach
-
-        </div>
-
-    </div>
-
-
-    <div class="clients-section">
-        <div class="container">
-            
-            <div class="clients-slider owl-carousel">
-                  @foreach($clients as $client)
-                  <div class="clients-slide">
-                      <a title="{{$client->company_name}}" target="_blank" href="{{$client->company_link}}"><img class="client_image owl-lazy" data-src="{{$client->photo ? '/images/media/' . $client->photo->file : '/public/img/200x200.png'}}" alt="{{$client->company_name}}"></a>
-                  </div>
-                  @endforeach
+            <div class="progress">
+              <span class="skill">CSS <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
             </div>
-            
+
+            <div class="progress">
+              <span class="skill">JavaScript <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="progress">
+              <span class="skill">PHP <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">WordPress/CMS <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Photoshop <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
-    </div>
 
+      </div>
+    </section><!-- End Our Skills Section -->
 
+    <!-- ======= Our Clients Section ======= -->
+    <section id="clients" class="clients">
+      <div class="container" data-aos="fade-up">
 
-@endsection
+        <div class="section-title">
+          <h2>Clients</h2>
+        </div>
 
-@section('scripts')
-<script src="{{ asset('js/front/magnific.min.js') }}" defer></script>
-<script>
-( function ( $ ) {
-    'use strict';
-    $( document ).ready( function () {
-        $(".popup-vimeo-video").magnificPopup({
-          type:"iframe",
-          removalDelay: 160,
-          preloader: false,
-          fixedContentPos: false
-        });
-    })
-} ( jQuery ) )
-</script>
+        <div class="row no-gutters clients-wrap clearfix" data-aos="fade-up">
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{{ asset('img/clients/client-1.png') }}" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{{ asset('img/clients/client-2.png') }}" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{{ asset('img/clients/client-3.png') }}" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{{ asset('img/clients/client-4.png') }}" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{{ asset('img/clients/client-5.png') }}" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{{ asset('img/clients/client-6.png') }}" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{{ asset('img/clients/client-7.png') }}" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{{ asset('img/clients/client-8.png') }}" class="img-fluid" alt="">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Our Clients Section -->
+
+  </main>
+  <!-- End #main -->
+
 @endsection

@@ -5,7 +5,7 @@
 
     @php $setting = App\Models\Setting::find($currentLang->id); @endphp
     <!-- Page Title -->
-    <title>@yield('title')</title>
+    <title>@yield('title', 'Codeup')</title>
     <!-- Meta Data -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,12 +26,29 @@
     <meta name="subjects" content="{{ $setting->title }}" />
     <meta name="classification" content="{{ $setting->title }}" />
 
-    <meta itemprop="name" content="@yield('title')">
-    <meta itemprop="description" content="@yield('meta')">
-    <meta itemprop="image"
-        content="{{ route('home') }}{{ $setting->photo ? '/images/media/' . $setting->photo->file : '/public/img/200x200.png' }}">
+    <!-- Favicons -->
+  <link href="{{ asset('img/favicon.png')}}" rel="icon">
+  <link href="{{ asset('img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
-    @if ($setting->OGgraph_switch == 1)
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ asset('vendor/animate.css/animate.min.css')}}" rel="stylesheet">
+  <link href="{{ asset('vendor/aos/aos.css')}}" rel="stylesheet">
+  <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{ asset('vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{ asset('vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+  <link href="{{ asset('vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+  <link href="{{ asset('vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ asset('css/style.css')}}" rel="stylesheet">
+
+
+
+    {{-- @if ($setting->OGgraph_switch == 1)
         <meta property="og:title" content="@yield('title')" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{ route('home') }}" />
@@ -39,9 +56,9 @@
             content="{{ route('home') }}{{ $setting->photo ? '/images/media/' . $setting->photo->file : '/public/img/200x200.png' }}" />
         <meta property="og:site_name" content="{{ $setting->author }}" />
         <meta property="og:description" content="@yield('meta')" />
-    @endif
+    @endif --}}
 
-    @if ($setting->analytics_switch == 1)
+    {{-- @if ($setting->analytics_switch == 1)
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ $setting->analytics }}"></script>
         <script>
@@ -54,9 +71,9 @@
 
             gtag('config', '{{ $setting->analytics }}');
         </script>
-    @endif
+    @endif --}}
 
-    @if ($setting->facebook_pixel_switch == 1)
+    {{-- @if ($setting->facebook_pixel_switch == 1)
         <!-- Facebook Pixel Code -->
         <script>
             ! function(f, b, e, v, n, t, s) {
@@ -83,36 +100,32 @@
         <noscript><img height="1" width="1" style="display:none"
                 src="https://www.facebook.com/tr?id={{ $setting->facebook_pixel }}&ev=PageView&noscript=1" /></noscript>
         <!-- End Facebook Pixel Code -->
-    @endif
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ $setting->favicon }}" type="image/x-icon">
-    <link rel="icon" href="{{ $setting->favicon }}" type="image/x-icon">
+    @endif --}}
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    {{-- <link rel="preconnect" href="https://fonts.gstatic.com"> --}}
 
 
-    @if ($currentLang->rtl == 1)
+    {{-- @if ($currentLang->rtl == 1)
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap"
             rel="stylesheet">
     @else
         <link href="{{ $setting->font }}" rel="stylesheet">
-    @endif
+    @endif --}}
     <!-- Styles -->
-    <link href="{{ asset('css/front/bootstrap.min.css') }}" type="text/css" rel="stylesheet">
+    {{-- <link href="{{ asset('css/front/bootstrap.min.css') }}" type="text/css" rel="stylesheet">
     <link href="{{ asset('css/libs/fontawesome.min.css') }}" type="text/css" rel="stylesheet">
     <link href="{{ asset('css/front/owl.carousel.min.css') }}" type="text/css" rel="stylesheet">
-    <link href="{{ asset('css/front/niva.css') }}" type="text/css" rel="stylesheet">
-    @yield('styles')
+    <link href="{{ asset('css/front/niva.css') }}" type="text/css" rel="stylesheet"> --}}
+    {{-- @yield('styles') --}}
 
-    @if ($currentLang->rtl == 1)
+    {{-- @if ($currentLang->rtl == 1)
         <link href="{{ asset('css/front/rtl.css') }}" type="text/css" rel="stylesheet">
-    @endif
+    @endif --}}
 
 
     <!-- Inline Styles -->
-    <style>
+    {{-- <style>
         body {
             @if ($currentLang->rtl == 1)
                 font-family: 'Cairo', sans-serif;
@@ -120,20 +133,70 @@
                 font-family: 'Nunito', sans-serif;
             @endif
         }
-    </style>
+    </style> --}}
 
-    @if ($setting->custom_css)
+    {{-- @if ($setting->custom_css)
         <style>
             {!! $setting->custom_css !!}
         </style>
-    @endif
+    @endif --}}
 
 </head>
 
-<body class="common-front @if ($currentLang->rtl == 1) rtl @endif"
-    @if ($currentLang->rtl == 1) dir="rtl" @endif>
+<body>
+  <!-- ======= Header ======= -->
 
-    <header class="header-niva">
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+    
+          <h1 class="logo me-auto"><a href="index.html"><span>Com</span>pany</a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+    
+          <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+              <li><a href="index.html" class="active">Home</a></li>
+    
+              <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="about.html">About Us</a></li>
+                  <li><a href="team.html">Team</a></li>
+                  <li><a href="testimonials.html">Testimonials</a></li>
+                  <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                    <ul>
+                      <li><a href="#">Deep Drop Down 1</a></li>
+                      <li><a href="#">Deep Drop Down 2</a></li>
+                      <li><a href="#">Deep Drop Down 3</a></li>
+                      <li><a href="#">Deep Drop Down 4</a></li>
+                      <li><a href="#">Deep Drop Down 5</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+    
+              <li><a href="services.html">Services</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+    
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav><!-- .navbar -->
+    
+          <div class="header-social-links d-flex">
+            <a href="#" class="twitter"><i class="bu bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bu bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bu bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bu bi-linkedin"></i></i></a>
+          </div>
+    
+        </div>
+      </header>
+      <!-- End Header -->
+    
+
+    {{-- <header class="header-niva">
 
         <div id="ct-topbar" class="ct-topbar-layout1">
             <div class="container">
@@ -234,191 +297,109 @@
             </div>
 
         </nav>
-    </header>
+    </header> --}}
 
-    <div class="fixed-sidebar-menu-overlay" style="opacity: 0;"></div>
 
-    <div class="fixed-sidebar-menu-holder header7">
-        <div class="fixed-sidebar-menu">
-            <div class="close-sidebar"></div>
-            <div class="header7 sidebar-content">
-                <div class="left-side">
-                    <aside class="widget_sweetthemes_address_social_icons">
-                        <div class="address-social-links">
-                            <h5 class="widget-title">{{ $headerfooter->sidebar_title }}</h5>
-                            <div class="contact-details">
-                                {!! $headerfooter->sidebar_description !!}
-                            </div>
-                        </div>
-                    </aside>
-                </div>
-            </div>
-        </div>
-    </div>
+
+  <!-- ======= Hero Section ======= -->
+
+
+    
+    
 
     @yield('content')
 
-    <div class="typed-section">
-        <div class="container">
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+        <div class="footer-top">
+          <div class="container">
             <div class="row">
-                <div class="col-md-8">
-                    <h4 class="parent-typed-text">
-                        <span class="mt_typed-beforetext">{{ $headerfooter->typed_title }} </span>
-                        <span class="mt_typed_text"></span>
-                    </h4>
-                </div>
-                <div class="col-md-4 text-right">
-                    <a href="{{ $headerfooter->typed_buttonlink }}" target="_self"
-                        class="btn btn-style1"><span>{{ $headerfooter->typed_buttontext }}</span></a>
-                </div>
+    
+              <div class="col-lg-3 col-md-6 footer-contact">
+                <h3>Company</h3>
+                <p>
+                  A108 Adam Street <br>
+                  New York, NY 535022<br>
+                  United States <br><br>
+                  <strong>Phone:</strong> +1 5589 55488 55<br>
+                  <strong>Email:</strong> info@example.com<br>
+                </p>
+              </div>
+    
+              <div class="col-lg-2 col-md-6 footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                </ul>
+              </div>
+    
+              <div class="col-lg-3 col-md-6 footer-links">
+                <h4>Our Services</h4>
+                <ul>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                </ul>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 footer-newsletter">
+                <h4>Join Our Newsletter</h4>
+                <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                <form action="" method="post">
+                  <input type="email" name="email"><input type="submit" value="Subscribe">
+                </form>
+              </div>
+    
             </div>
+          </div>
         </div>
-    </div>
-
-
-    <footer class="footer-section">
-        <div class="footer-wrapper">
-            <div class="row align-items-end">
-                <div class="col-lg-6">
-                    <div class="footer-left">
-                        <div class="inner">
-                            <span>{{ $headerfooter->footer_col1_subtitle }}</span>
-                            <h4>{{ $headerfooter->footer_col1_title }}</h4>
-                            <a class="btn btn-style2" href="{{ $headerfooter->footer_col1_buttonlink }}">
-                                <span>{{ $headerfooter->footer_col1_buttontext }}</span> </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="footer-right">
-                        <div class="row">
-                            <div class="col-lg-6 col-sm-6 col-12">
-                                <div class="footer-widget">
-                                    <div class="footer-widget widget_nav_menu">
-                                        <h4 class="title">{{ $headerfooter->footer_col2_title1 }}</h4>
-                                        <span class="niva-animate-border"></span>
-                                        <div class="menu-quick-link-container">
-                                            {!! $headerfooter->footer_col2_html1 !!}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-sm-6 col-12">
-                                <div class="footer-widget">
-                                    <div class="widget widget_custom_html">
-                                        <h4 class="title">{{ $headerfooter->footer_col2_title2 }}</h4>
-                                        <span class="niva-animate-border"></span>
-                                        <div class="custom-html-widget">
-                                            {!! $headerfooter->footer_col2_html2 !!}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="copyright-text">
-                                    {{-- {!!$headerfooter->footer_copyright!!} --}}
-                                    @if(app()->getLocale() == 'en')
-                                        <p>Copyright © {{date('Y') }}. All rights reserved By CodeUp</p>
-                                    @elseif(app()->getLocale() == 'fr')
-                                    <p>Droits d'auteur © {{date('Y') }}. Tous droits réservés Par CodeUp</p>
-                                    @else
-                                    <p>حقوق النشر © {{date('Y') }}. جميع الحقوق محفوظة. بواسطة CodeUp</p>
-                                        @endif
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
+    
+        <div class="container d-md-flex py-4">
+    
+          <div class="me-md-auto text-center text-md-start">
+            <div class="copyright">
+              &copy; Copyright <strong><span>Company</span></strong>. All Rights Reserved
             </div>
+            <div class="credits">
+              <!-- All the links in the footer should remain intact. -->
+              <!-- You can delete the links only if you purchased the pro version. -->
+              <!-- Licensing information: https://bootstrapmade.com/license/ -->
+              <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/company-free-html-bootstrap-template/ -->
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </div>
+          <div class="social-links text-center text-md-right pt-3 pt-md-0">
+            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          </div>
         </div>
-    </footer>
+      </footer>
+      <!-- End Footer -->
 
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    <div class="progress-wrap">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
-    </div>
-
-
-
-
-    @if ($setting->SchmeaORG_switch == 1)
-        <div class="hidden" itemscope="" itemtype="https://schema.org/LocalBusiness">
-            <span itemprop="description">@yield('meta')</span>
-            <a itemprop="url" href="{{ route('home') }}"> </a>
-            <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-                <img src="{{ route('home') }}{{ $setting->photo ? '/images/media/' . $setting->photo->file : '/public/img/200x200.png' }}"
-                    alt="logo" width="120" itemprop="url">
-            </div>
-            <span itemprop="name">{{ $setting->title }}</span>
-            <em><span itemprop="priceRange">{{ $setting->price_range }}</span></em>
-            <div itemprop="address" itemscope="" itemtype="https://schema.org/PostalAddress">
-                <span itemprop="addressLocality">{{ $setting->address }}</span> |
-                <span itemprop="addressCountry">{{ $setting->country }}</span> |
-                <span itemprop="telephone">{{ $setting->phone }}</span> |
-                <span itemprop="email">{{ $setting->contact }}</span>
-            </div>
-        </div>
-    @endif
-
-
-    @if ($setting->whatsapp == 1)
-        <a target="_blank" class="codeless-add-purchase-button" href="https://wa.me/{{ $setting->phone }}"><i
-                class="icon"><svg height="682pt" viewBox="-23 -21 682 682.66669" width="682pt"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="m544.386719 93.007812c-59.875-59.945312-139.503907-92.9726558-224.335938-93.007812-174.804687 0-317.070312 142.261719-317.140625 317.113281-.023437 55.894531 14.578125 110.457031 42.332032 158.550781l-44.992188 164.335938 168.121094-44.101562c46.324218 25.269531 98.476562 38.585937 151.550781 38.601562h.132813c174.785156 0 317.066406-142.273438 317.132812-317.132812.035156-84.742188-32.921875-164.417969-92.800781-224.359376zm-224.335938 487.933594h-.109375c-47.296875-.019531-93.683594-12.730468-134.160156-36.742187l-9.621094-5.714844-99.765625 26.171875 26.628907-97.269531-6.269532-9.972657c-26.386718-41.96875-40.320312-90.476562-40.296875-140.28125.054688-145.332031 118.304688-263.570312 263.699219-263.570312 70.40625.023438 136.589844 27.476562 186.355469 77.300781s77.15625 116.050781 77.132812 186.484375c-.0625 145.34375-118.304687 263.59375-263.59375 263.59375zm144.585938-197.417968c-7.921875-3.96875-46.882813-23.132813-54.148438-25.78125-7.257812-2.644532-12.546875-3.960938-17.824219 3.96875-5.285156 7.929687-20.46875 25.78125-25.09375 31.066406-4.625 5.289062-9.242187 5.953125-17.167968 1.984375-7.925782-3.964844-33.457032-12.335938-63.726563-39.332031-23.554687-21.011719-39.457031-46.960938-44.082031-54.890626-4.617188-7.9375-.039062-11.8125 3.476562-16.171874 8.578126-10.652344 17.167969-21.820313 19.808594-27.105469 2.644532-5.289063 1.320313-9.917969-.664062-13.882813-1.976563-3.964844-17.824219-42.96875-24.425782-58.839844-6.4375-15.445312-12.964843-13.359374-17.832031-13.601562-4.617187-.230469-9.902343-.277344-15.1875-.277344-5.28125 0-13.867187 1.980469-21.132812 9.917969-7.261719 7.933594-27.730469 27.101563-27.730469 66.105469s28.394531 76.683594 32.355469 81.972656c3.960937 5.289062 55.878906 85.328125 135.367187 119.648438 18.90625 8.171874 33.664063 13.042968 45.175782 16.695312 18.984374 6.03125 36.253906 5.179688 49.910156 3.140625 15.226562-2.277344 46.878906-19.171875 53.488281-37.679687 6.601563-18.511719 6.601563-34.375 4.617187-37.683594-1.976562-3.304688-7.261718-5.285156-15.183593-9.253906zm0 0"
-                        fill-rule="evenodd" />
-                </svg></i></a>
-    @endif
-
-
-    <script src="{{ asset('js/libs/jquery.min.js') }}"></script>
-    <script src="{{ asset('js/front/popper.min.js') }}"></script>
-    <script src="{{ asset('js/front/bootstrap.min.js') }}" defer></script>
-    <script src="{{ asset('js/front/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('js/front/simpleParallax.min.js') }}" defer></script>
-    <script src="{{ asset('js/front/countTO.js') }}" defer></script>
-    <script src="{{ asset('js/front/typed.min.js') }}" defer></script>
-    <script src="{{ asset('js/front/niva.js') }}" defer></script>
-
-
-
-
-
-    @include('cookieConsent::index')
-
-
-
-    <script type="text/javascript">
-        (function($) {
-            'use strict';
-            $(document).ready(function() {
-                /* TYPED TEXT */
-                $(function() {
-                    $(".mt_typed_text").typed({
-                        strings: {!! $headerfooter->typed_text !!},
-                        typeSpeed: 1,
-                        backDelay: 2000,
-                        loop: true
-                    });
-                });
-            })
-        }(jQuery))
-    </script>
-
-    @if ($setting->custom_css)
-        <script type="text/javascript">
-            {!! $setting->custom_js !!}
-        </script>
-    @endif
-
-    @yield('scripts')
-
-
-
+    <!-- Vendor JS Files -->
+    <script src="{{ asset('vendor/aos/aos.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor/waypoints/noframework.waypoints.js') }}"></script>
+    <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 
 </html>
