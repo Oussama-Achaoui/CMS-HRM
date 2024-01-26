@@ -27,26 +27,16 @@
 
         <div class="row content">
           <div class="col-lg-6" data-aos="fade-right">
-            <h2>Eum ipsam laborum deleniti velitena</h2>
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>
+            <h2>{{$aboutsetting->about_title}}</h2>
+            <h3>{{$aboutsetting->about_subtitle}}</h3>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
-            </p>
-            <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequa</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</li>
-            </ul>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-          </div>
-        </div>
+            <p>{{$aboutsetting->about_description}}</p>
+            <div class="exp-about d-flex">
+                <h3 class="nmb-font-about text-primary"> {{$aboutsetting->about_yearstitle}} </h3>
+                <h3 class="service_summary-about"> {{$aboutsetting->about_yearstext}}</h3>
+            </div>
+            <a href="{{ $aboutsetting->about_buttonlink }}" type="button" class="btn btn-outline-primary" data-mdb-ripple-init data-mdb-ripple-color="dark">{{ $aboutsetting->about_buttontext }}</a>        </div>
 
       </div>
     </section><!-- End About Us Section -->
@@ -56,83 +46,31 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Our <strong>Team</strong></h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>{{ $aboutsetting->member_title_section }}</h2>
+          <p>{{ $aboutsetting->meta_description }}</p>
         </div>
 
         <div class="row">
 
+          @foreach ($members as $member)
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up">
               <div class="member-img">
-                <img src="{{ asset('img/team/team-1.jpg') }}" class="img-fluid" alt="">
+                <img src="{{ '/images/media/' . $member->photo->file }}" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <a href="{{$member->twitter}}"><i class="bi bi-twitter"></i></a>
+                  <a href="{{$member->facebook}}"><i class="bi bi-facebook"></i></a>
+                  <!-- <a href=""><i class="bi bi-instagram"></i></a> -->
+                  <a href="{{$member->linkedin}}"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
+                <h4>{{ $member->name }}</h4>
+                <span>{{ $member->position }}</span>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="100">
-              <div class="member-img">
-                <img src="{{ asset('img/team/team-2.jpg') }}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="200">
-              <div class="member-img">
-                <img src="{{ asset('img/team/team-3.jpg') }}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="300">
-              <div class="member-img">
-                <img src="{{ asset('img/team/team-4.jpg') }}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-              </div>
-            </div>
-          </div>
+          @endforeach
 
         </div>
 
