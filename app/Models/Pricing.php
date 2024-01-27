@@ -16,6 +16,7 @@ class Pricing extends Model
         'button_text',
         'button_link',
         'pricing_switch',
-        'popular_text'
+        'popular_text',
+        'price'
     ];
 }

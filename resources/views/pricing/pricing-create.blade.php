@@ -47,6 +47,10 @@
                                         <input type="text" name="title" class="form-control">
                                     </div>
                                     <div class="form-group">
+                                        <strong>{{ clean(trans('niva-backend.price'), array('Attr.EnableID' => true)) }}</strong>
+                                        <input type="number" name="price" class="form-control">
+                                    </div>
+                                    <div class="form-group">
                                         <strong>{{clean( trans('niva-backend.description') , array('Attr.EnableID' => true))}}</strong>
                                         <textarea name="description" class="form-control" id="description" rows="6"></textarea>
                                     </div>

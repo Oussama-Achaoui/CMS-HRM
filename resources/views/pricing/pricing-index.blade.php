@@ -69,6 +69,7 @@
                                 <tr>
                                     <th><input type="checkbox" id="options"></th>
                                     <th>{{ clean(trans('niva-backend.title'), ['Attr.EnableID' => true]) }}</th>
+                                    <th>{{ clean(trans('niva-backend.price'), ['Attr.EnableID' => true]) }}</th>
                                     <th>{{ clean(trans('niva-backend.description'), ['Attr.EnableID' => true]) }}
                                     </th>
                                     <th>{{ clean(trans('niva-backend.button_text'), ['Attr.EnableID' => true]) }}
@@ -81,6 +82,7 @@
                                 <tr>
                                     <th><input type="checkbox" id="options1"></th>
                                     <th>{{ clean(trans('niva-backend.title'), ['Attr.EnableID' => true]) }}</th>
+                                    <th>{{ clean(trans('niva-backend.price'), ['Attr.EnableID' => true]) }}</th>
                                     <th>{{ clean(trans('niva-backend.description'), ['Attr.EnableID' => true]) }}
                                     </th>
                                     <th>{{ clean(trans('niva-backend.button_text'), ['Attr.EnableID' => true]) }}
@@ -100,7 +102,7 @@
                                                         href="{{ route('pricing.edit', $pricing->id) . '?language=' . request()->input('language') }}">{{ clean(trans('niva-backend.edit'), ['Attr.EnableID' => true]) }}</a>
                                                 </p>
                                             </td>
-
+                                            <td data-label="link">{{ $pricing->price . " $" }}</td>
                                             <td class="pricing-desc-dash" data-label="link">{!! $pricing->description !!}</td>
                                             <td data-label="link">{!! $pricing->button_text !!}</td>
                                             <td data-label="link">{{ $pricing->button_link }}</td>
