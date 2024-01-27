@@ -27,19 +27,20 @@
 
         <div class="row content">
           <div class="col-lg-6" data-aos="fade-right">
-            <h2>{{$aboutsetting->about_title}}</h2>
-            <h3>{{$aboutsetting->about_subtitle}}</h3>
+            <h2>{!! $aboutsetting->about_title !!}</h2>
+            <h3>{!! $aboutsetting->about_subtitle !!}</h3>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
-            <p>{{$aboutsetting->about_description}}</p>
+            <p>{!! $aboutsetting->about_description !!}</p>
             <div class="exp-about d-flex">
-                <h3 class="nmb-font-about text-primary"> {{$aboutsetting->about_yearstitle}} </h3>
-                <h3 class="service_summary-about"> {{$aboutsetting->about_yearstext}}</h3>
+                <h3 class="nmb-font-about text-primary"> {!! $aboutsetting->about_yearstitle !!} </h3>
+                <h3 class="service_summary-about"> {!! $aboutsetting->about_yearstext !!}</h3>
             </div>
             <a href="{{ $aboutsetting->about_buttonlink }}" type="button" class="btn btn-outline-primary" data-mdb-ripple-init data-mdb-ripple-color="dark">{{ $aboutsetting->about_buttontext }}</a>        </div>
 
       </div>
-    </section><!-- End About Us Section -->
+    </section>
+    <!-- End About Us Section -->
 
     <!-- ======= Our Team Section ======= -->
     <section id="team" class="team section-bg">
@@ -60,7 +61,7 @@
                 <div class="social">
                   <a href="{{$member->twitter}}"><i class="bi bi-twitter"></i></a>
                   <a href="{{$member->facebook}}"><i class="bi bi-facebook"></i></a>
-                  <!-- <a href=""><i class="bi bi-instagram"></i></a> -->
+                  <a href=""><i class="bi bi-instagram"></i></a> 
                   <a href="{{$member->linkedin}}"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>

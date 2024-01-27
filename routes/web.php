@@ -32,7 +32,7 @@ use App\Http\Controllers\EmployeeFileController;
 use App\Http\Controllers\LeaveRequestController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\ExpenseController;
-
+use Illuminate\Support\Facades\Auth;
 
 /*
 |----------------------------use App\Models\Language;
