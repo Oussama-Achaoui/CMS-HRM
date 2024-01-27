@@ -318,20 +318,21 @@
                             <div class="bg-white py-2 collapse-inner rounded">
                                 <a class="collapse-item"
                                     href="{{ route('slider.index') }}?language=@php echo $lang->code; @endphp">Manage
-                                    slider </a>
+                                    Slider </a>
                                 <a class="collapse-item"
                                     href="{{ route('service.index') }}?language=@php echo $lang->code; @endphp">Manage
-                                    services</a>
+                                    Services</a>
                                 <a class="collapse-item"
                                     href="{{ route('testimonial.index') }}?language=@php echo $lang->code; @endphp">Manage
-                                    testimonials</a>
+                                    Testimonials</a>
 
                                 <a class="collapse-item"
                                     href="{{ route('client.index') }}?language=@php echo $lang->code; @endphp">Manage
-                                    clients</a>
+                                    Clients</a>
                                 <a class="collapse-item"
-                                    href="{{ route('pricing.index') }}?language=@php echo $lang->code; @endphp">Pricing
-                                    tables</a>
+                                    href="{{ route('pricing.index') }}?language=@php echo $lang->code; @endphp">Manage Pricing</a>
+                                <a class="collapse-item"
+                                    href="{{ route('faqs.index') }}?language=@php echo $lang->code; @endphp">Manage FAQ</a>
                             </div>
                         </div>
                     </li>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminMediasController;
@@ -32,7 +33,7 @@ use App\Http\Controllers\EmployeeFileController;
 use App\Http\Controllers\LeaveRequestController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\ExpenseController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\FaqsController;
 
 /*
 |----------------------------use App\Models\Language;
@@ -163,6 +164,8 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('admin/incomes', IncomeController::class);
     
     Route::resource('admin/expenses', ExpenseController::class);
+
+    Route::resource('admin/faqs', FaqsController::class);
 
 });
 

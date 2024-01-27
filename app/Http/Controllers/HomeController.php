@@ -20,6 +20,7 @@ use App\Models\PortfolioSetting;
 use App\Models\ProjectCategory; 
 use App\Models\HeaderFooterSetting; 
 use App\Models\BlogSetting;
+use App\Models\Faqs;
 use View;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactFormRequest; 
@@ -170,6 +171,7 @@ class HomeController extends Controller
         $data['pricingsetting'] = PricingSetting::find($lang_id);
         $data['menus'] = Menu::where('language_id', $lang_id)->get();
         $data['pricings'] = Pricing::where('language_id', $lang_id)->get();
+        $data['faqs'] = Faqs::all();
 
         return view('pricing', $data, compact('langs'));
     }
