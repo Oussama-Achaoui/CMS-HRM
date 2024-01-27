@@ -49,9 +49,9 @@
                                 <tr>
                                     <th><input type="checkbox" id="options"></th>
                                     <th>{{ clean(trans('niva-backend.photo'), ['Attr.EnableID' => true]) }}</th>
-                                    <th>{{ clean(trans('niva-backend.company_name'), ['Attr.EnableID' => true]) }}
+                                    <th>{{ clean(trans('niva-backend.CodeUp_name'), ['Attr.EnableID' => true]) }}
                                     </th>
-                                    <th>{{ clean(trans('niva-backend.company_link'), ['Attr.EnableID' => true]) }}
+                                    <th>{{ clean(trans('niva-backend.CodeUp_link'), ['Attr.EnableID' => true]) }}
                                     </th>
                                 </tr>
                             </thead>
@@ -59,9 +59,9 @@
                                 <tr>
                                     <th><input type="checkbox" id="options1"></th>
                                     <th>{{ clean(trans('niva-backend.photo'), ['Attr.EnableID' => true]) }}</th>
-                                    <th>{{ clean(trans('niva-backend.company_name'), ['Attr.EnableID' => true]) }}
+                                    <th>{{ clean(trans('niva-backend.CodeUp_name'), ['Attr.EnableID' => true]) }}
                                     </th>
-                                    <th>{{ clean(trans('niva-backend.company_link'), ['Attr.EnableID' => true]) }}
+                                    <th>{{ clean(trans('niva-backend.CodeUp_link'), ['Attr.EnableID' => true]) }}
                                     </th>
                                 </tr>
                             </tfoot>
@@ -79,8 +79,8 @@
                                                 </p>
                                             </td>
 
-                                            <td data-label="link">{{ $client->company_name }}</td>
-                                            <td data-label="link">{{ $client->company_link }}</td>
+                                            <td data-label="link">{{ $client->CodeUp_name }}</td>
+                                            <td data-label="link">{{ $client->CodeUp_link }}</td>
                                         </tr>
                                     @endforeach
                                 @endif
