@@ -2,7 +2,7 @@
 
 
 @section('title')
-    Pricing
+    Tarifs
 @endsection
 
 @section('content')
@@ -13,10 +13,10 @@
             <div class="container">
 
                 <div class="d-flex gap-3 align-items-center">
-                    <h2 class="m-0">Pricing |</h2>
+                    <h2 class="m-0">Tarifs |</h2>
                     <ol>
                         <li><a href="{{ route('home') }}">Home</a></li>
-                        <li>Pricing</li>
+                        <li>Tarifs</li>
                     </ol>
                 </div>
 
@@ -35,7 +35,7 @@
                                 <span
                                     class="@if ($pricing->pricing_switch == 1) advanced @endif ">{{ $pricing->popular_text }}</span>
                                 <h3>{{ $pricing->title }}</h3>
-                                <h4><sup>$</sup>{{ $pricing->price }}<span> / month</span></h4>
+                                <h4><sup>MAD</sup>{{ $pricing->price }}<span> / mois</span></h4>
                                 <div class="plan-features">
                                     {!! $pricing->description !!}
                                 </div>
