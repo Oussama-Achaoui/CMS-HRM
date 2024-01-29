@@ -12,12 +12,12 @@
         <section id="breadcrumbs" class="breadcrumbs">
             <div class="container">
 
-                <div class="d-flex justify-content-between align-items-center">
-                    <h2>Blog</h2>
+                <div class="d-flex gap-3 align-items-center">
+                    <h2 class="m-0">Blog |</h2>
                     <ol>
                         <li><a href="{{ route('home') }}">Accueil</a></li>
                         <li><a href="{{ route('blog') }}">Blog</a></li>
-                        <li>{{$post->title}}</li>
+                        <li>{{ $post->title }}</li>
                     </ol>
                 </div>
 
@@ -35,11 +35,12 @@
                         <article class="entry entry-single">
 
                             <div class="entry-img">
-                                <img src="{{ '/images/media/' . $post->photo->file }}" alt="{{$post->title}}" class="img-fluid">
+                                <img src="{{ '/images/media/' . $post->photo->file }}" alt="{{ $post->title }}"
+                                    class="img-fluid">
                             </div>
 
                             <h2 class="entry-title">
-                                <a href="javascript:;"> {{$post->title}} </a>
+                                <a href="javascript:;"> {{ $post->title }} </a>
                             </h2>
 
                             <div class="entry-meta">
@@ -47,7 +48,9 @@
                                     {{-- <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a
                                             href="blog-single.html">John Doe</a></li> --}}
                                     <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a
-                                            href="javascript:;"><time datetime="{{ date('d.M.Y', strtotime($post->created_at)) }}">{{ date('d.M.Y', strtotime($post->created_at)) }}</time></a></li>
+                                            href="javascript:;"><time
+                                                datetime="{{ date('d.M.Y', strtotime($post->created_at)) }}">{{ date('d.M.Y', strtotime($post->created_at)) }}</time></a>
+                                    </li>
                                     {{-- <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a
                                             href="blog-single.html">12 Comments</a></li> --}}
                                 </ul>
@@ -55,18 +58,18 @@
 
                             <div class="entry-content">
                                 <p>
-	                               {!! $post->body !!}
-                                   
+                                    {!! $post->body !!}
+
                                 </p>
 
-                               
+
 
                             </div>
 
                             <div class="entry-footer">
                                 <i class="bi bi-folder"></i>
                                 <ul class="cats">
-                                    <li><a href="javascript:;">{{$post->category->name}}</a></li>
+                                    <li><a href="javascript:;">{{ $post->category->name }}</a></li>
                                 </ul>
 
                                 <i class="bi bi-tags"></i>
@@ -252,7 +255,7 @@
 
                     </div><!-- End blog entries list -->
 
-                    @include('blog-sidebar')
+                    @include('includes.blog-sidebar')
 
                 </div>
 

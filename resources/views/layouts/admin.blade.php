@@ -528,7 +528,7 @@
     <script src="{{ asset('js/libs/custom-dashboard.js') }}"></script>
     {{-- script for chart  --}}
     @yield('chart-script')
-    {{-- @yield('quill-script') --}}
+    {{-- script for text editor --}}
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script>
         var quill = new Quill('#body-editor', {

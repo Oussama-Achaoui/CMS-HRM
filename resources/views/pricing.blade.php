@@ -12,8 +12,8 @@
         <section id="breadcrumbs" class="breadcrumbs">
             <div class="container">
 
-                <div class="d-flex justify-content-between align-items-center">
-                    <h2>Pricing</h2>
+                <div class="d-flex gap-3 align-items-center">
+                    <h2 class="m-0">Pricing |</h2>
                     <ol>
                         <li><a href="{{ route('home') }}">Home</a></li>
                         <li>Pricing</li>

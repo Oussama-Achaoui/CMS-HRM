@@ -13,7 +13,7 @@
                             <div class="carousel-content animate__animated animate__fadeInUp">
                                 <h2>{!! $slider->heading1 !!}</h2>
                                 <p>{!! $slider->heading2 !!}</p>
-                                <div class="text-center"><a href="{{ $slider->link }}" class="btn-get-started">Read More</a>
+                                <div class="text-center"><a href="{!!$slider->button_link!!}" class="btn-get-started">{!!$slider->button_text!!}</a>
                                 </div>
                             </div>
                         </div>
@@ -96,7 +96,7 @@
                 <div class="row" data-aos="fade-up">
                     <div class="col-lg-12 d-flex justify-content-center">
                         <ul id="portfolio-flters">
-                            <li data-filter="*" class="filter-active">All</li>
+                            <li data-filter="*" class="filter-active">Tout</li>
                             @foreach ($projects_categories as $category)
                                 <li data-filter=".filter-{{ $category->id }}">{{ $category->name }}</li>
                             @endforeach

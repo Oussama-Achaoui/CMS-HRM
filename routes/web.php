@@ -61,6 +61,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/changelanguage/{lang}', [HomeController::class, 'changeLanguage'])->name('changeLanguage');
     
     Route::get('/about-us', [HomeController::class, 'about'])->name('about');
+    Route::get('/services', [HomeController::class, 'services'])->name('services');
     Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
     Route::get('/pricing', [HomeController::class, 'pricing'])->name('pricing');
     Route::get('/blog', [HomeController::class, 'blog'])->name('blog');

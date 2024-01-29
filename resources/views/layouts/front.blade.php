@@ -50,23 +50,21 @@
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a href="{{ route('home') }}"
-                            class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
-
-                    <li><a href="{{ route('about') }}"
-                            class="{{ request()->routeIs('about') ? 'active' : '' }}">About</a></li>
-
-                    <li><a href="javascript:;" class="{{ request()->routeIs('') ? 'active' : '' }}">Services</a></li>
-                    <li><a href="{{ route('portfolio') }}"
-                            class="{{ request()->routeIs('portfolio') ? 'active' : '' }}">Portfolio</a></li>
-                    <li><a href="{{ route('pricing') }}" class="{{ request()->routeIs('pricing') ? 'active' : '' }}">
-                            Pricing</a></li>
-                    <li><a href="{{ route('blog') }}"
-                            class="{{ request()->routeIs('blog') ? 'active' : '' }}">Blog</a></li>
-                    <li><a href="{{ route('contact') }}"
-                            class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a></li>
-
+                    <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Accueil</a></li>
+                
+                    <li><a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">À propos</a></li>
+                
+                    <li><a href="{{ route('services') }}" class="{{ request()->routeIs('services') ? 'active' : '' }}">Services</a></li>
+                    
+                    <li><a href="{{ route('portfolio') }}" class="{{ request()->routeIs('portfolio') ? 'active' : '' }}">Portfolio</a></li>
+                    
+                    <li><a href="{{ route('pricing') }}" class="{{ request()->routeIs('pricing') ? 'active' : '' }}">Tarifs</a></li>
+                    
+                    <li><a href="{{ route('blog') }}" class="{{ request()->routeIs('blog') ? 'active' : '' }}">Blog</a></li>
+                    
+                    <li><a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a></li>
                 </ul>
+                
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 

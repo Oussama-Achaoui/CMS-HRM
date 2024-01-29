@@ -12,8 +12,8 @@
         <section id="breadcrumbs" class="breadcrumbs">
             <div class="container">
 
-                <div class="d-flex justify-content-between align-items-center">
-                    <h2>Blog</h2>
+                <div class="d-flex gap-3 align-items-center">
+                    <h2 class="m-0">Blog | </h2>
                     <ol>
                         <li><a href="{{ route('home') }}">Home</a></li>
                         <li>Blog</li>
@@ -80,7 +80,7 @@
                     </div>
                     <!-- End blog entries list -->
                     {{-- Début de la section de la barre latérale (sidebar) --}}
-                    @include('blog-sidebar')
+                    @include('includes.blog-sidebar')
                     {{-- Fin de la section de la barre latérale (sidebar) --}}
 
                 </div>

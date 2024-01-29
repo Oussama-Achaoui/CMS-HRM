@@ -100,6 +100,24 @@ class HomeController extends Controller
         return view('about', $data, compact('members','clients', 'langs'));
     }
 
+    public function services()
+    {
+        if (session()->has('lang')) {
+            $currentLang = Language::where('code', session()->get('lang'))->first();
+        } else {
+            $currentLang = Language::where('is_default', 1)->first();
+        }
+        $data['currentLang'] = $currentLang;
+
+        $lang_id = $currentLang->id;
+
+        
+        
+        $langs = Language::all();
+        $data['services'] = Service::where('language_id', $lang_id)->get();
+        return view('services', $data, compact('langs'));
+    }
+
     public function show_slug_about($slug = 'home')
     {
         $page = AboutSetting::whereSlug($slug)->first();

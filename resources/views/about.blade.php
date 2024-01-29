@@ -11,11 +11,11 @@
         <section id="breadcrumbs" class="breadcrumbs">
             <div class="container">
 
-                <div class="d-flex justify-content-between align-items-center">
-                    <h2>About</h2>
+                <div class="d-flex gap-3 align-items-center">
+                    <h2 class="m-0">À propos |</h2>
                     <ol>
-                        <li><a href="{{ route('home') }}">Home</a></li>
-                        <li>About</li>
+                        <li><a href="{{ route('home') }}">Accueil</a></li>
+                        <li>À propos</li>
                     </ol>
                 </div>
 
@@ -62,12 +62,12 @@
                                 <div class="member-img">
                                     <img src="{{ '/images/media/' . $member->photo->file }}" class="img-fluid"
                                         alt="">
-                                    <div class="social">
+                                    {{-- <div class="social">
                                         <a href="{{ $member->twitter }}"><i class="bi bi-twitter"></i></a>
                                         <a href="{{ $member->facebook }}"><i class="bi bi-facebook"></i></a>
                                         <a href=""><i class="bi bi-instagram"></i></a>
                                         <a href="{{ $member->linkedin }}"><i class="bi bi-linkedin"></i></a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="member-info">
                                     <h4>{{ $member->name }}</h4>
@@ -120,6 +120,7 @@
                                     aria-valuemax="100"></div>
                             </div>
                         </div>
+                        
 
                     </div>
 

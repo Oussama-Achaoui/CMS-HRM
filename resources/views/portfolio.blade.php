@@ -12,11 +12,11 @@
         <section id="breadcrumbs" class="breadcrumbs">
             <div class="container">
 
-                <div class="d-flex justify-content-between align-items-center">
-                    <h2>Portfolio</h2>
+                <div class="d-flex gap-3 align-items-center">
+                    <h2 class="m-0">Portefeuille |</h2>
                     <ol>
                         <li><a href="{{ route('home') }}">Home</a></li>
-                        <li>Portfolio</li>
+                        <li>Portefeuille</li>
                     </ol>
                 </div>
 
@@ -30,7 +30,7 @@
                 <div class="row" data-aos="fade-up">
                     <div class="col-lg-12 d-flex justify-content-center">
                         <ul id="portfolio-flters">
-                            <li data-filter="*" class="filter-active">All</li>
+                            <li data-filter="*" class="filter-active">Tout</li>
                             @foreach ($projects_categories as $category)
                                 <li data-filter=".filter-{{ $category->id }}">{{ $category->name }}</li>
                             @endforeach
