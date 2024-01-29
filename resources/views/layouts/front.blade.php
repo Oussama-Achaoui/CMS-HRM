@@ -44,27 +44,42 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href="{{ route('home') }}"><span>Code</span>Up</a></h1>
+            @if ($setting->photo)
+                <a class="logo me-auto" href="{{ route('home') }}" title="{{ $setting->title }}">
+                    <img width="123" height="37" class="img-fluid logo-front"
+                        src="{{ '/images/media/' . $setting->photo->file }}" alt="{{ $setting->title }} logo">
+                </a>
+            @else
+                <h1 class="logo me-auto"><a href="{{ route('home') }}"><span>Code</span>Up</a></h1>
+            @endif
+
             <!-- Uncomment below if you prefer to use an image logo -->
             {{-- <a href="{{route('home')}}" class="logo me-auto me-lg-0"><img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid"></a> --}}
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Accueil</a></li>
-                
-                    <li><a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">À propos</a></li>
-                
-                    <li><a href="{{ route('services') }}" class="{{ request()->routeIs('services') ? 'active' : '' }}">Services</a></li>
-                    
-                    <li><a href="{{ route('portfolio') }}" class="{{ request()->routeIs('portfolio') ? 'active' : '' }}">Portefeuille</a></li>
-                    
-                    <li><a href="{{ route('pricing') }}" class="{{ request()->routeIs('pricing') ? 'active' : '' }}">Tarifs</a></li>
-                    
-                    <li><a href="{{ route('blog') }}" class="{{ request()->routeIs('blog') ? 'active' : '' }}">Blog</a></li>
-                    
-                    <li><a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a></li>
+                    <li><a href="{{ route('home') }}"
+                            class="{{ request()->routeIs('home') ? 'active' : '' }}">Accueil</a></li>
+
+                    <li><a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">À
+                            propos</a></li>
+
+                    <li><a href="{{ route('services') }}"
+                            class="{{ request()->routeIs('services') ? 'active' : '' }}">Services</a></li>
+
+                    <li><a href="{{ route('portfolio') }}"
+                            class="{{ request()->routeIs('portfolio') ? 'active' : '' }}">Portefeuille</a></li>
+
+                    <li><a href="{{ route('pricing') }}"
+                            class="{{ request()->routeIs('pricing') ? 'active' : '' }}">Tarifs</a></li>
+
+                    <li><a href="{{ route('blog') }}"
+                            class="{{ request()->routeIs('blog') ? 'active' : '' }}">Blog</a></li>
+
+                    <li><a href="{{ route('contact') }}"
+                            class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a></li>
                 </ul>
-                
+
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 
@@ -124,7 +139,7 @@
                 <div class="row w-100">
 
                     <div class="navbar-header col-6 col-md-2">
-                        <a class="navbar-brand" href="{{ url('/') }}" title="{{ $setting->title }}">
+                        <a class="navbar-brand" href="{{route('home')}}" title="{{ $setting->title }}">
                             <img width="123" height="37" class="img-fluid logo-front"
                                 src="{{ $setting->photo ? '/images/media/' . $setting->photo->file : '/img/200x200.png' }}"
                                 alt="">
