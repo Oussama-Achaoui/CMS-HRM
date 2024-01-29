@@ -64,11 +64,11 @@
                     <li><a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">À
                             propos</a></li>
 
-                    <li><a href="{{ route('services') }}"
+                    {{-- <li><a href="{{ route('services') }}"
                             class="{{ request()->routeIs('services') ? 'active' : '' }}">Services</a></li>
 
                     <li><a href="{{ route('portfolio') }}"
-                            class="{{ request()->routeIs('portfolio') ? 'active' : '' }}">Portefeuille</a></li>
+                            class="{{ request()->routeIs('portfolio') ? 'active' : '' }}">Portefeuille</a></li> --}}
 
                     <li><a href="{{ route('pricing') }}"
                             class="{{ request()->routeIs('pricing') ? 'active' : '' }}">Tarifs</a></li>
