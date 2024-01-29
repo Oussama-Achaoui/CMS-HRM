@@ -58,9 +58,9 @@
                         <a href="{{ $homesetting->about_buttonlink }}" type="button" class="btn btn-outline-primary"
                             data-mdb-ripple-init data-mdb-ripple-color="dark">{!! $homesetting->about_buttontext !!}</a>
                     </div>
-
                 </div>
-        </section><!-- End About Us Section -->
+        </section>
+        <!-- End About Us Section -->
 
         <!-- ======= Services Section ======= -->
         <section id="services" class="services section-bg">
@@ -84,7 +84,6 @@
                             </div>
                         </div>
                     @endforeach
-
                 </div>
             </div>
         </section>
@@ -98,9 +97,9 @@
                     <div class="col-lg-12 d-flex justify-content-center">
                         <ul id="portfolio-flters">
                             <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-app">App</li>
-                            <li data-filter=".filter-card">Card</li>
-                            <li data-filter=".filter-web">Web</li>
+                            @foreach ($projects_categories as $category)
+                                <li data-filter=".filter-{{ $category->id }}">{{ $category->name }}</li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -108,24 +107,29 @@
                 <div class="row portfolio-container" data-aos="fade-up">
 
                     @foreach ($projects as $project)
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-{!! $project->project_category_id !!}">
                             <img src="{{ asset('/images/media/' . $project->photo->file) }}" class="img-fluid"
-                                alt="">
+                                alt="image de {!! $project->title !!}">
                             <div class="portfolio-info">
                                 <h4>{!! $project->title !!}</h4>
                                 <p>{!! $project->slug !!}</p>
-                                <a href="{{ asset('img/portfolio/portfolio-1.jpg') }}" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                <a href="{{ asset('/images/media/' . $project->photo->file) }}"
+                                    data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"
+                                    title="{!! $project->title !!}"><i class="bx bx-plus"></i></a>
+                                {{-- <a href="portfolio-details.html" class="details-link" title="More Details"><i
+                    class="bx bx-link"></i></a> --}}
                             </div>
                         </div>
                     @endforeach
 
+
+
                 </div>
 
             </div>
-        </section><!-- End Portfolio Section -->
+        </section>
+
+        <!-- End Portfolio Section -->
 
         <!-- ======= Our Clients Section ======= -->
         <section id="clients" class="clients">
@@ -188,7 +192,8 @@
                 </div>
 
             </div>
-        </section><!-- End Our Clients Section -->
+        </section>
+        <!-- End Our Clients Section -->
 
     </main>
     <!-- End #main -->

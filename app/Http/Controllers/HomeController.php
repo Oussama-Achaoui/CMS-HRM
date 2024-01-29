@@ -60,8 +60,6 @@ class HomeController extends Controller
         
         $langs = Language::all();
         
-        
-
         $data['sliders'] = Slider::where('language_id', $lang_id)->get();
         $data['menus'] = Menu::where('language_id', $lang_id)->get();
         $data['setting'] = Setting::find($lang_id);
@@ -69,6 +67,7 @@ class HomeController extends Controller
         $data['homesetting'] = HomeSetting::find($lang_id);
         $data['services'] = Service::where('language_id', $lang_id)->get();
         $data['projects'] = Project::where('language_id', $lang_id)->get();
+        $data['projects_categories'] = ProjectCategory::where('language_id', $lang_id)->get();
         $data['testimonials'] = Testimonial::where('language_id', $lang_id)->get();
         $data['posts'] = Post::where('language_id', $lang_id)->get();
 
@@ -129,6 +128,7 @@ class HomeController extends Controller
         $data['setting'] = Setting::find($lang_id);
         $data['menus'] = Menu::where('language_id', $lang_id)->get();
         $data['projects'] = Project::where('language_id', $lang_id)->get();
+        $data['projects_categories'] = ProjectCategory::where('language_id', $lang_id)->get();
         $data['portfoliosettings'] = PortfolioSetting::find($lang_id);
         $data['project_categories'] = ProjectCategory::where('language_id', $lang_id)->get();
         
