@@ -57,7 +57,7 @@
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h2>Frequently Asked Questions</h2>
+                        <h2>QUESTIONS FRÉQUEMMENT POSÉES</h2>
                     </div>
 
                     <div class="faq-list">
