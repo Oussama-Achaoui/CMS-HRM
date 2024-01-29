@@ -34,7 +34,7 @@
                             <article class="entry">
 
                                 <div class="entry-img">
-                                    <img src="{{ '/images/media/' . $post->photo->file }}" alt="" class="img-fluid">
+                                    <img src="{{ '/images/media/' . $post->photo->file }}" alt="{{$post->title}}" class="img-fluid">
                                 </div>
 
                                 <h2 class="entry-title">
