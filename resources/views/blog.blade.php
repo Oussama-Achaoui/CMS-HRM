@@ -67,14 +67,18 @@
                         @endforeach
 
                         <div class="blog-pagination">
-                            <ul class="justify-content-center">
-                                <li><a href="#">1</a></li>
-                                <li class="active"><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                            </ul>
-                        </div>
-
-                    </div><!-- End blog entries list -->
+                          <ul class="justify-content-center">
+                              @foreach ($posts->getUrlRange(1, $posts->lastPage()) as $page => $url)
+                                  <li class="{{ $page == $posts->currentPage() ? 'active' : '' }}">
+                                      <a href="{{ $url }}">{{ $page }}</a>
+                                  </li>
+                              @endforeach
+                          </ul>
+                      </div>
+                      
+                      
+                    </div>
+                    <!-- End blog entries list -->
 
                     <div class="col-lg-4">
 
