@@ -81,7 +81,8 @@
                 </ul>
 
                 <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
+            </nav>
+            <!-- .navbar -->
 
             <div class="header-social-links d-flex">
                 <a href="#" class="twitter"><i class="bu bi-twitter"></i></a>
@@ -94,116 +95,7 @@
     </header>
     <!-- End Header -->
 
-
-    {{-- <header class="header-niva">
-
-        <div id="ct-topbar" class="ct-topbar-layout1">
-            <div class="container">
-                <div class="row">
-                    <div class="ct-topbar-meta">
-                        <div class="ct-topbar-item"> <i class="fas fa-phone-square-alt"></i>
-                            <label>{{ clean(trans('niva-backend.call_help'), ['Attr.EnableID' => true]) }}</label>
-                            <a href="tel:@php echo $setting->phone; @endphp">@php echo $setting->phone; @endphp</a></div>
-                        <div class="ct-topbar-item"> <i class="fas fa-envelope-open"></i>
-                            <label>{{ clean(trans('niva-backend.mail_us'), ['Attr.EnableID' => true]) }}</label>
-                            <a href="mailto:@php echo $setting->contact; @endphp">@php echo $setting->contact; @endphp</a></div>
-                        <div class="ct-topbar-item"> <i class="fas fa-map-marker-alt"></i>
-                            <label>{{ clean(trans('niva-backend.our_address'), ['Attr.EnableID' => true]) }}</label>
-                            <span>@php echo $setting->address; @endphp</span></div>
-                    </div>
-                    <div class="ct-topbar-social">
-                        @if (!empty($currentLang) && count($langs) > 1)
-                            <a class="nav-link dropdown-toggle" title="{{ $currentLang->code }}" href="#0"
-                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="flag-lang" width="16" height="16"
-                                    src="{{ $currentLang->photo ? '/images/media/' . $currentLang->photo->file : '/public/img/200x200.png' }}">
-                                <span>{{ $currentLang->code }}</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                @foreach ($langs as $key => $lang)
-                                    <a title="{{ $lang->name }}" class="dropdown-item"
-                                        href='{{ route('changeLanguage', $lang->code) }}'> <img class="flag-lang"
-                                            width="16" height="16"
-                                            src="{{ $lang->photo ? '/images/media/' . $lang->photo->file : '/public/img/200x200.png' }}">
-                                        <span>{{ $lang->name }}</span></a>
-                                @endforeach
-                            </div>
-                        @endif
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <div class="row w-100">
-
-                    <div class="navbar-header col-6 col-md-2">
-                        <a class="navbar-brand" href="{{route('home')}}" title="{{ $setting->title }}">
-                            <img width="123" height="37" class="img-fluid logo-front"
-                                src="{{ $setting->photo ? '/images/media/' . $setting->photo->file : '/img/200x200.png' }}"
-                                alt="">
-                        </a>
-                    </div>
-
-                    <div class="navbar-menu  col-md-8">
-
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarNiva" aria-controls="navbarNiva" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            <i class="fas fa-bars"></i>
-                        </button>
-
-                        <div class="collapse navbar-collapse" id="navbarNiva">
-                            <ul class="navbar-nav mr-auto ml-auto">
-
-                                @foreach ($menus->sortBy('order') as $prod)
-                                    <li class="nav-item"> <a title="{{ $prod->name }}" class="nav-link"
-                                            href="{{ $prod->link }}">{{ $prod->name }}</a> </li>
-                                @endforeach
-                            </ul>
-                        </div>
-
-                    </div>
-
-
-                    <div class="navbar-buttons  col-6  col-md-2">
-
-                        <div class="navbar-buttons-inner">
-                            <div class="link_user_section">
-                                <div class="link_user_section_inner">
-                                    @if (Auth::guest())
-                                        <a href="{{ route('login') }}"><i class="far fa-user"></i></a>
-                                    @else
-                                        <a href="{{ route('dashboard.index') }}"><i class="far fa-user"></i></a>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="side_panel_sidebar_parent">
-                                <div class="side_panel_sidebar">
-                                    <span
-                                        class="side_panel_toggle"><span></span><span></span><span></span><span></span></span>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                    </div>
-
-                </div>
-            </div>
-
-        </nav>
-    </header> --}}
-
     <!-- ======= Hero Section ======= -->
-
-
-
-
-
     @yield('content')
 
 
@@ -214,7 +106,7 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-6 footer-contact">
+                    <div class="col-lg-4 col-md-6 footer-contact">
                         <h3>CodeUp</h3>
                         <p>
                             A108 Adam Street <br>
@@ -225,7 +117,7 @@
                         </p>
                     </div>
 
-                    <div class="col-lg-2 col-md-6 footer-links">
+                    <div class="col-lg-4 col-md-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="javascript:;">Home</a></li>
@@ -236,7 +128,7 @@
                         </ul>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
+                    <div class="col-lg-4 col-md-6 footer-links">
                         <h4>Our Services</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="javascript:;">Web Design</a></li>
@@ -247,13 +139,13 @@
                         </ul>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                    {{-- <div class="col-lg-4 col-md-6 footer-newsletter">
                         <h4>Join Our Newsletter</h4>
                         <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
                         <form action="javascript:;" method="post">
                             <input type="email" name="email"><input type="submit" value="Subscribe">
                         </form>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>
@@ -273,15 +165,15 @@
                 <a href="javascript:;" class="twitter"><i class="bx bxl-twitter"></i></a>
                 <a href="javascript:;" class="facebook"><i class="bx bxl-facebook"></i></a>
                 <a href="javascript:;" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="javascript:;" class="google-plus"><i class="bx bxl-skype"></i></a>
                 <a href="javascript:;" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
         </div>
     </footer>
     <!-- End Footer -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
 
     <!-- Vendor JS Files -->
     <script src="{{ asset('vendor/aos/aos.js') }}"></script>

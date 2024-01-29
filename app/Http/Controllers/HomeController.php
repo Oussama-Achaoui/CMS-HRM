@@ -96,10 +96,10 @@ class HomeController extends Controller
         $data['setting'] = Setting::find($lang_id);
         $data['aboutsetting'] = AboutSetting::find($lang_id);
         $data['menus'] = Menu::where('language_id', $lang_id)->get();
-
+        
         return view('about', $data, compact('members','clients', 'langs'));
     }
-
+    
     public function services()
     {
         if (session()->has('lang')) {
@@ -108,13 +108,10 @@ class HomeController extends Controller
             $currentLang = Language::where('is_default', 1)->first();
         }
         $data['currentLang'] = $currentLang;
-
         $lang_id = $currentLang->id;
-
-        
-        
         $langs = Language::all();
         $data['services'] = Service::where('language_id', $lang_id)->get();
+        $data['setting'] = Setting::find($lang_id);
         return view('services', $data, compact('langs'));
     }
 
